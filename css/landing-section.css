@@ -4,11 +4,39 @@
     display:flex;
     flex-direction: column;
     justify-content:space-between;
+    background-image: url("/images/landing-background.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 
 #title{
     text-align: center;
+    max-width:25vw;
+    background-color: #03e9f4;
+    margin:auto;
+    margin-top:20px;
+    color: rgb(0, 0, 0);
+    padding-top:10px;
+    padding-bottom:10px;
+    border-radius: 10px;
+    font-size: 100%;
+    font-weight:600;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 5px #03c0f4, 0 0 0px #03e9f4, 0 0 0px #03e9f4, 0 0 10px #03e9f4;
 }
 
 #search-section{
