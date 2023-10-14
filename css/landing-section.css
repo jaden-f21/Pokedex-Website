@@ -1,0 +1,148 @@
+#landing-section{
+    width: 100%;
+    height:85vh;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+
+
+#title{
+    text-align: center;
+}
+
+#search-section{
+    width:100%;
+    border:0.6px solid white;
+    border:1px solid #91c6e9;
+    box-shadow:  0 0 2px #68b7ec, 0 0 2px #68b7ec, 0 0 2px #68b7ec, 0 0 10px #68b7ec,
+                inset 0 0 25px #68b7ec;
+    border-radius: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+#search-container{
+    padding-left:40px;
+    padding-right:80px;
+    padding-bottom:20px;
+    padding-top:15px;
+    display:flex;
+    flex-direction: column;
+
+}
+  
+  
+#look-up-title {
+    margin:none;
+    text-transform: initial;
+    font-weight: 100;
+    color: #b3eafe;
+    text-shadow: 0 0 5px #b3eafe, 0 0 5px #b3eafe;
+
+    font-size: 100%;
+   
+}
+  
+#search{
+    display: flex;
+    align-items: center;
+    margin-right:80px;
+    width:100%;
+}
+  
+#search-bar {
+    display:flex;
+    align-items: center;
+    padding-right: 10px; 
+    flex: 3; 
+}
+  
+  
+#search-bar input {
+    max-width: 100%;
+    background-color: transparent;
+    background-color: rgb(246, 246, 255);
+    border-radius: 40px;
+    height: 40px;
+    outline: none;
+    border: none;
+    font-weight: 100;
+    font-size:100%;
+    color: rgb(0, 0, 0);
+    font-family: 'Raleway', sans-serif;
+    padding-left: 30px;
+    flex:2;
+}
+  
+#search-bar img {
+    max-width: 30px;
+    cursor: pointer;
+    margin-left:-60px;
+    padding-right:15px;
+}
+  
+  
+#lookup-btn{
+    background-color: transparent;
+    outline: none;
+    border: none;;
+}
+  
+  
+#suprise-me-btn{
+    display:flex;
+  
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+    flex:1;
+        
+    width:100%;
+    height:40px;
+    border-radius:60px;
+    outline: none;
+    border:none;
+    background-color: #ffdc00 ;
+    box-shadow: 0 0 5px #ffdc00, 0 0 2px #ffdc00, 0 0 5px #ffdc00, 0 0 200px #ffdc00;
+    color:white;
+    cursor: pointer;
+    padding-left:50px;
+    padding-right:20px;
+    white-space: nowrap;
+    padding-top:10px;
+    padding-bottom: 10px;
+  }
+  
+  
+#suprise-me-btn img{
+    max-width:28px;
+  }
+  
+  @media (max-width: 750px) {
+    #search-container{
+        padding-right:40px;
+    }
+    #search{
+      flex-direction: column;
+      align-items: stretch;
+    }
+    #search-bar{
+        padding-right:0px;
+    }
+  
+    #suprise-me-btn{
+      margin-top:20px;
+      padding-bottom:0px;
+      padding-top:0px;
+
+    }
+  
+    #suprise-me-btn{
+      font-display: none;
+      white-space: nowrap; 
+      overflow: hidden
+    }
+  
+    
+  }

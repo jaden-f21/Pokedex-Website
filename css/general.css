@@ -1,0 +1,23 @@
+html{
+    background-image: url("/images/f52c766c5d85e257c842a024f59c8551.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index:-100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+body{
+    margin:0;
+}
+
+
+#main-container{
+    max-width:92%;
+    margin:auto;
+    height:200vh;
+    /* background-color: rgb(0, 0, 0,0.5); */
+    z-index:100;
+}
+

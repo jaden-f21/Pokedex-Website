@@ -1,0 +1,19 @@
+nav{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left:20px;
+    padding-right:20px;
+    background-color: rgba(245, 253, 255);
+}
+
+
+#logo{
+    max-width:120px;
+    cursor: pointer;
+}
+
+#ball-logo{
+    max-width:30px;
+    cursor:pointer;
+}
