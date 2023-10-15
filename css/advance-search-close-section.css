@@ -1,0 +1,356 @@
+#advance-search-close-section{
+    width:100%;
+    margin-bottom: 20px;
+    padding-bottom:20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border:1px solid #91c6e9;
+    box-shadow:  0 0 2px #68b7ec, 0 0 2px #68b7ec, 0 0 2px #68b7ec, 0 0 10px #68b7ec,
+                inset 0 0 25px #68b7ec;
+    /* backdrop-filter: blur(8px); */
+    background-image: url("/images/advance-search-background.png");
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#advance-search-close-section h1{
+    font-size: 130%;
+    color: #b3eafe;
+}
+
+#advance-search-close-container{
+    width:90%;
+    display:flex;
+    padding-left:50px;
+    padding-right:50px;
+    margin-top:50px;
+  }
+  
+  
+  /* ------------------------------------------------------------------------------ left section---------------------------------------------------------- */
+  
+  /* ---------------------advance search for pokemon types -------------------------------------*/
+  #type-options{
+    flex:1;
+    margin-right:30px;
+  }
+  
+  #type-options h1{
+    margin-top:0px;
+    padding-bottom: 20px;
+    border-bottom: 1.5px solid rgb(227, 227, 255);
+    border-bottom-width: 80%;
+    
+  }
+  
+  #types-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+    margin-top:40px;
+    
+  }
+  
+  .type-btn{
+    cursor: pointer;
+    background-color: transparent;
+    border:none;
+    color:white;
+    font-size: 100%;
+    border-radius: 50px;
+    height:30px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #91c6e9;
+    cursor: pointer;
+    
+  }
+  
+  
+  /* ----------------------------------------------------------------------------------right section-------------------------------------------------------- */
+  
+  #advance-search-right-section{
+    display:flex;
+    flex-direction: column;
+    flex:1;
+  }
+  
+  /* ------------------------advance search for generation type------------------------ */
+  
+  #gen-options{
+    width:85%;
+    max-width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: left;
+    margin-bottom: 30px;;
+    padding:35px 25px 35px 25px;
+    border: 2px solid #466e9b;
+    border-radius: 1em;
+  }
+  
+  #gen-options h1{
+    margin-top: 0px;
+    align-self: flex-start;
+    margin-bottom: 30px;;
+  }
+  
+  
+  #gen-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 20px;
+    width:100%;
+    max-width:100vw;
+  }
+  
+  .gen-btn{
+    width:100%;
+    background-color: #00ffff;
+    margin: 0px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    border: none;;
+    font-size: 100%;
+    margin-right: 0px;;
+    cursor: pointer;
+    border-radius: 50px;
+  }
+  
+  .gen-btn:hover, .gen-btn.active {
+    box-shadow: 0 0 5px #00ffff, 0 0 12px #00ffff, 0 0 10px #00ffff, 0 0 10px #00ffff;
+  }
+  
+  
+  /* ------------------------------------advance search for number range----------------------------------------------- */
+  
+  #slider-container{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    width: 85%;
+    max-width: 80vw;
+    padding:25px;
+    padding-top:10px;
+    padding-bottom: 50px;
+    border-radius: 15px;
+    border: 2px solid #466e9b;
+  }
+  
+  #range-input{
+    -webkit-appearance: none;
+    height:1px;
+    width:100%;
+    margin-top:20px;
+  }
+  
+  
+  #range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    background-image: url("/images/pikachu.png");
+    background-size: cover;
+    cursor: pointer;
+  }
+  
+  #range-input::-moz-range-thumb {
+    width: 25px;
+    height: 25px; 
+    cursor: pointer;
+  }
+  
+  
+  #slider-header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+  }
+  
+  
+  @media (max-width: 700px) {
+    #advance-search-close-container{
+      flex-direction: column;
+    }
+  
+    #type-options{
+      width:100%;
+    }
+  
+    .type-btn{
+      width:80%;
+    }
+  
+    #types-container{
+      grid-column-gap: 0px;
+      grid-row-gap: 12px;
+    }
+  
+    #advance-search-right-section{
+      width:100%;
+    }
+    
+    #gen-options{
+      align-items:flex-start;
+      margin-top: 40px;;
+      padding:0px;
+      border:none;
+      width: 100%;
+    }
+  
+    #gen-container{
+      width:80vw;
+    }
+  
+    #slider-header{
+      width:100%;
+      max-width:80vw;
+    }
+    
+    
+  }
+  
+  /* -------------------------- advance bottom section------------------------------------------ */
+  
+  #advance-search-bottom-section{
+    display:flex;
+    margin-top: 40px;;
+    width:90%;
+    max-width:85vw;
+  }
+  
+  
+  /* search btn */
+  #advance-search-btns{
+    display:flex;
+    align-items: center;
+    background-color:#b3eafe ;
+    box-shadow: 0 0 2px 1px #b3eafe;
+    width:60%;
+    max-width:100vw;
+    border-radius: 20px;;
+    height:50px;
+    
+  }
+  
+  #advance-search-btn{
+    background-color: transparent;
+    outline: none;
+    border: none;;
+    width:100%;
+    max-width: 100vw;
+    font-size: 100%;
+    cursor: pointer;
+  }
+  
+  
+  #advance-search-btn-img-container{
+    width: 10%;
+    cursor: pointer;
+    padding-right:15px;
+    background-color:transparent;
+    border-radius: 50px;
+    border: none;;
+    outline:none;
+  }
+  
+  
+  #advance-search-icon{
+    width:35px;
+    float:right;
+  }
+  
+  /* reset btn */
+  #reset-btn{
+    width:32%;
+    max-width:60vw;
+    border-radius: 20px;;
+    height:50px;
+    outline: none;
+    border: none;;
+    cursor: pointer;
+    color: #b3eafe;
+    text-shadow: 0 0 5px #b3eafe, 0 0 5px #b3eafe;
+    -webkit-box-shadow: 0 0 2px 1px #b3eafe;
+    box-shadow: 0 0 2px 1px #b3eafe;
+    background-color: transparent;
+    font-size: 100%;
+    margin-right:50px;
+  
+  }
+  
+  /* -------------hide search section--------------------------------- */
+  
+  #hide-search-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top:40px;
+    cursor: pointer;
+    max-width: 100%;
+    height:50px;
+   
+  }
+  
+  #hide-search-btn{
+    color:white;
+    text-shadow: 0 0 5px #b3eafe, 0 0 5px #b3eafe;
+    margin:0px;
+    margin-top:6px;
+    font-size: 100%;
+    border:none;
+    outline:none;
+    background-color: transparent;
+    cursor: pointer;
+
+  }
+  
+  
+  #up-icon{
+    max-width:15px;
+    transform: rotate(180deg);
+   
+  }
+  
+  
+  @media (max-width: 750px) {
+    #advance-search-bottom-section{
+      flex-direction: column;
+      margin-top:20px;
+    }
+    
+    #hide-search-container{
+      margin-top:20px;
+    }
+  
+    #advance-search-btns{
+      width:100%;
+      max-width: 80vw;
+    }
+  
+    #reset-btn{
+      width:100%;
+      max-width:80vw;;
+      margin-bottom: 20px;
+    }
+  
+  
+  }
