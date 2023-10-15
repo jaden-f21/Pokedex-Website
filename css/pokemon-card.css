@@ -1,0 +1,116 @@
+/* pokemon cards */
+
+.pokemon-card-container{
+    height: 440px;
+    background-color: rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    border: 2px solid #466e9b;
+    display:flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+  
+
+#card-background img{
+    width:50px;
+}
+  
+.pkm-img{
+    width:60%;
+    height:65%;
+    max-width:80vw;
+}
+  
+  
+ /* top section */
+.pkm-card-top-section{
+    /* background-image: url("/images/advance_search_sp_open_bg.png"); */
+    /* background-position: center; */
+    border-radius: 15px;
+    width:100%;
+    height:65%;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position:relative;
+}
+  
+  
+/* bottom section */
+.pkm-card-bottom-section{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding:20px;
+    border:0px solid #c1d9e9;
+    box-shadow:  0 0 1px #68b7ec, 0 0 1px #68b7ec, 0 0 1px #68b7ec, 0 0 2px #a0d1f1,
+                inset 0 0 5px #68b7ec;
+    height:45%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  
+}
+  
+.pkm-number{
+    margin:0px;
+    font-size: 20px;
+}
+  
+.pkm-name{
+    margin-bottom: 0px;
+    margin-top:5px;
+    font-size: 2.2vw!important;
+    font-weight: 200;
+}
+   
+.pkm-types{
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    width:100%;
+  
+}
+  
+.pkm-types button{
+    height:30px;
+    font-size: 18px;
+ }
+  
+  
+
+@media (max-width: 900px) {
+  
+    .pokemon-card-container{
+      /* height:300px;
+      max-width: 160px;; */
+      height:300px;
+    }
+  
+  
+    .pkm-types{
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+  
+    .pkm-types button{
+      font-size: 12px;
+      height:20px;
+      width:100%;
+      
+    }
+
+    .pkm-card-bottom-section{
+      padding:10px;
+      font-size:10px;
+    }
+    }
+  
+   
+  
+  
