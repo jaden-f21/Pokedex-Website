@@ -1,3 +1,5 @@
+/* advance search open section */
+
 #advance-search-open-section{
   display:flex;
   flex-direction: column;
@@ -7,37 +9,6 @@
   padding-top: 0px;
 
 }
-
-
-/* pokemon banner */
-#pokemon-header-img-container{
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border:1px solid #91c6e9;
-  box-shadow:  0 0 2px #68b7ec, 0 0 2px #68b7ec, 0 0 2px #68b7ec, 0 0 10px #68b7ec,
-              inset 0 0 20px #68b7ec;
-  padding-top:10px;
-  padding-bottom: 10px;;
-  width:90vw;
-  max-width:100vw;
-  border-radius: 10px;
-  backdrop-filter: blur(8px);
-  /* remove after */
-  
-}
-
-
-
-#pokemon-logo{
-  width:10vw;
-  padding-top:8px;
-  padding-bottom: 8px;
-}
-
-
-/* advance search section */
 
 #advance-search-open-container{
   color:white;
@@ -71,6 +42,7 @@
   cursor: pointer;
 }
 
+
 #expand-img{
   width:15px;
   cursor: pointer;
@@ -79,7 +51,6 @@
 }
 
 /* results */
-
 #gen-list{
   display:flex;
   justify-content:space-between;
@@ -101,20 +72,12 @@
 }
 
 
-
-
 @media (max-width: 750px) {
-  #advance-search-container{
+  #advance-search-open-container{
     padding-top:7px;
   }
   #advance-search-title{
     display:none;
     padding:0px;
   }
-  #pokemon-logo{
-    width:20vw;
-    margin: 0px;
-  }
-
-
 }

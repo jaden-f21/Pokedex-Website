@@ -7,7 +7,6 @@
     border:1px solid #91c6e9;
     box-shadow:  0 0 2px #68b7ec, 0 0 2px #68b7ec, 0 0 2px #68b7ec, 0 0 10px #68b7ec,
                 inset 0 0 25px #68b7ec;
-    /* backdrop-filter: blur(8px); */
     background-image: url("/images/advance-search-background.png");
     background-size: cover;
     background-position: center;
