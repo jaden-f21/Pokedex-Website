@@ -20,11 +20,7 @@
         <div></div>
         <img src="images/icons/pokeball.png" id="ball-logo">
     </nav>
-    <!-- background -->
-    <video autoplay muted loop id="video-container">
-        <source src="video/" type="video/mp4">
-      </video>
-
+  
     <!-- main -->
     <div id="main-container">
 
@@ -36,6 +32,11 @@
                 <span id="title">POKEDEX</span>
             </div>
           
+              <!-- background -->
+            <div id="background-container">
+                <img src="images/landing-background.png" id = "landing-img">
+            </div>
+        
             <!-- search -->
             <div id="search-section">
                 <div id="search-container">
@@ -54,114 +55,115 @@
                     </div>
                 </div>
             </div>
-        </section>
+             <!-- advance search open section -->
+            <section id="advance-search-open-section">
+                <button id="advance-search-open-container">
+                    <span id="advance-search-title">Show Advance search</span>
+                    <img src="/images/icons/expand-arrow.png" id="expand-img">
+                </button>
+            </section>
 
-        <!-- advance search open section -->
-        <section id="advance-search-open-section">
-            <button id="advance-search-open-container">
-                <span id="advance-search-title">Show Advance search</span>
-                <img src="/images/icons/expand-arrow.png" id="expand-img">
-            </button>
-        </section>
-
-        <!-- advance search close section -->
-        <section id="advance-search-close-section">
-            <div id="advance-search-close-container">
-                <!-- types -->
-                <div id="type-options">
-                    <h1>Type</h1>
-                    <div id="types-container">
-                        <div class="type">
-                            <button class="type-btn" id="normal-btn">Normal</button>
+            <!-- advance search close section -->
+            <section id="advance-search-close-section" style="display:none">
+                <div id="advance-search-close-container">
+                    <!-- types -->
+                    <div id="type-options">
+                        <h1>Type</h1>
+                        <div id="types-container">
+                            <div class="type">
+                                <button class="type-btn" id="normal-btn">Normal</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="fire-btn">Fire</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="water-btn">Water</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="grass-btn">Grass</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="electric-btn">Electric</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="ice-btn">Ice</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="fighting-btn">Fighting</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="poison-btn">Poison</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="ground-btn">Ground</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="flying-btn">Flying</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="psychic-btn">Psychic</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="bug-btn">Bug</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="rock-btn">Rock</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="ghost-btn">Ghost</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="dragon-btn">Dragon</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="dark-btn">Dark</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="steel-btn">Steel</button>
+                            </div>
+                            <div class="type">
+                                <button class="type-btn" id="fairy-btn">Fairy</button>
+                            </div>
                         </div>
-                        <div class="type">
-                            <button class="type-btn" id="fire-btn">Fire</button>
+                    </div>
+                    <div id="advance-search-right-section">
+                        <div id="gen-options">
+                            <h1>Generations</h1>
+                            <div id="gen-container">
+                                <button class="gen-btn">Gen I</button>
+                                <button class="gen-btn">Gen II</button>
+                                <button class="gen-btn">Gen IV</button>
+                                <button class="gen-btn">Gen V</button>
+                                <button class="gen-btn">Gen VI</button>
+                                <button class="gen-btn">Gen VII</button>
+                            </div>
                         </div>
-                        <div class="type">
-                            <button class="type-btn" id="water-btn">Water</button>
-                        </div>
-                        <div class="type">
-                            <button class="type-btn" id="grass-btn">Grass</button>
-                        </div>
-                        <div class="type">
-                            <button class="type-btn" id="electric-btn">Electric</button>
-                        </div>
-                        <div class="type">
-                            <button class="type-btn" id="ice-btn">Ice</button>
-                        </div>
-                        <div class="type">
-                            <button class="type-btn" id="fighting-btn">Fighting</button>
-                        </div>
-                        <div class="type">
-                            <button class="type-btn" id="poison-btn">Poison</button>
-                        </div>
-                        <div class="type">
-                            <button class="type-btn" id="ground-btn">Ground</button>
-                        </div>
-                        <div class="type">
-                            <button class="type-btn" id="flying-btn">Flying</button>
-                        </div>
-                        <div class="type">
-                            <button class="type-btn" id="psychic-btn">Psychic</button>
-                        </div>
-                        <div class="type">
-                            <button class="type-btn" id="bug-btn">Bug</button>
-                        </div>
-                        <div class="type">
-                            <button class="type-btn" id="rock-btn">Rock</button>
-                        </div>
-                        <div class="type">
-                            <button class="type-btn" id="ghost-btn">Ghost</button>
-                        </div>
-                        <div class="type">
-                            <button class="type-btn" id="dragon-btn">Dragon</button>
-                        </div>
-                        <div class="type">
-                            <button class="type-btn" id="dark-btn">Dark</button>
-                        </div>
-                        <div class="type">
-                            <button class="type-btn" id="steel-btn">Steel</button>
-                        </div>
-                        <div class="type">
-                            <button class="type-btn" id="fairy-btn">Fairy</button>
+                        <div id="slider-container">
+                            <div id="slider-header">
+                                <h1 id="header">Number <span id="min-value">1</span> - <span id="max-value">110</span></h1>
+                            </div>
+                            <input type="range" min="1" max="110" value="50" id="range-input">
                         </div>
                     </div>
                 </div>
-                <div id="advance-search-right-section">
-                    <div id="gen-options">
-                        <h1>Generations</h1>
-                        <div id="gen-container">
-                            <button class="gen-btn">Gen I</button>
-                            <button class="gen-btn">Gen II</button>
-                            <button class="gen-btn">Gen IV</button>
-                            <button class="gen-btn">Gen V</button>
-                            <button class="gen-btn">Gen VI</button>
-                            <button class="gen-btn">Gen VII</button>
-                        </div>
-                    </div>
-                    <div id="slider-container">
-                        <div id="slider-header">
-                            <h1 id="header">Number <span id="min-value">1</span> - <span id="max-value">110</span></h1>
-                        </div>
-                        <input type="range" min="1" max="110" value="50" id="range-input">
-                    </div>
+                <div id="advance-search-bottom-section">
+                    <button id="reset-btn">Reset</button>
+                    <form action="" id="advance-search-btns">
+                        <button id="advance-search-btn">Search</button>
+                        <button id="advance-search-btn-img-container">
+                            <img src="images/icons/search.png" id="advance-search-icon">
+                        </button>
+                    </form>
                 </div>
-            </div>
-            <div id="advance-search-bottom-section">
-                <button id="reset-btn">Reset</button>
-                <form action="" id="advance-search-btns">
-                    <button id="advance-search-btn">Search</button>
-                    <button id="advance-search-btn-img-container">
-                        <img src="images/icons/search.png" id="advance-search-icon">
-                    </button>
-                </form>
-            </div>
-            <div id="hide-search-container">
-                <img src="/images/icons/expand-arrow.png" id="up-icon">
-                <button id="hide-search-btn">Hide Advance Search</button>
-            </div>
+                <div id="hide-search-container">
+                    <img src="/images/icons/expand-arrow.png" id="up-icon">
+                    <button id="hide-search-btn">Hide Advance Search</button>
+                </div>
+            </section>
+
         </section>
 
+       
         <!-- pokemon results section -->
         <div id = "pokemon-results-section">
         </div>

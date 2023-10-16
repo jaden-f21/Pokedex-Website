@@ -13,8 +13,8 @@ body{
     font-size:20px;
 }
 
-h3{
-    font-size:large;
+h1{
+    font-size:larger !important;
 }
 
 #main-container{
