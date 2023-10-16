@@ -10,13 +10,16 @@ html{
 
 body{
     margin:0;
+    font-size:20px;
 }
 
+h3{
+    font-size:large;
+}
 
 #main-container{
     max-width:92%;
     margin:auto;
-    height:200vh;
     z-index:100;
 }
 
