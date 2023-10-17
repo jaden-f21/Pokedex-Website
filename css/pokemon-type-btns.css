@@ -1,0 +1,112 @@
+/* ----------------------------------------------------------buttons -------------------------------------------------------*/
+:root {
+  --fire-btn-color: #ff6900; 
+  --normal-btn-color:  #dcdcdc;
+  --water-btn-color:  #14b9ff;
+  --grass-btn-color:  #b4f000;
+  --electric-btn-color:#ffe100;
+  --ice-btn-color:#14f5ff;
+  --fighting-btn-color: #dc6900;
+  --poison-btn-color:#d28cd2;
+  --ground-btn-color:#fac85a;;
+  --flying-btn-color:#78dcff;
+  --pychic-btn-color:#f08cdc;
+  --bug-btn-color:#46c846;
+  --rock-btn-color:#b48c64;
+  --ghost-btn-color:#a08cff;
+  --dragon-btn-color:#5078dc;
+  --dark-btn-color:#787878;
+  --steel-btn-color:#aac8f0;
+  --fairy-btn-color:#ffafdc;
+
+}
+
+#normal-btn{
+  color: var(--normal-btn-color);
+  border-color: var(--normal-btn-color);
+}
+
+#fire-btn{
+  color:var(--fire-btn-color);
+  border-color: var(--fire-btn-color);
+}
+
+#water-btn{
+  color: var(--water-btn-color);
+  border-color: var(--water-btn-color);
+}
+
+#grass-btn{
+  color: var(--grass-btn-color);
+  border-color: var(--grass-btn-color);
+}
+
+#electric-btn{
+  color: var(--electric-btn-color);
+  border-color: var(--electric-btn-color);
+}
+
+#ice-btn{
+  color: var(ice-btn-color);
+  border-color: var(ice-btn-color);
+}
+
+#fighting-btn{
+  color: var(--fighting-btn-color);
+  border-color: var(--fighting-btn-color);
+}
+
+#poison-btn{
+  color: var(--poison-btn-color);
+  border-color: var(--poison-btn-color);
+}
+
+#ground-btn{
+  color: var(--ground-btn-color);
+  border-color: var(--ground-btn-color);
+}
+
+#flying-btn{
+  color: var(--flying-btn-color);
+  border-color: var(--flying-btn-color);
+}
+
+#pyschic-btn{
+  color: var(--pychic-btn-color);
+  border-color: var(--pychic-btn-color);
+}
+
+#bug-btn{
+  color: var(--bug-btn-color);
+  border-color: var(--bug-btn-color);
+}
+
+#rock-btn{
+  color: var(--rock-btn-color);
+  border-color: var(--rock-btn-color);
+}
+
+#ghost-btn{
+  color: var(--ghost-btn-color);
+  border-color: var(--ghost-btn-color);
+}
+
+#dragon-btn{
+  color: var(--dragon-btn-color);
+  border-color: var(--dragon-btn-color);
+}
+
+#dark-btn{
+  color: var(--dark-btn-color);
+  border-color: var(--dark-btn-color);
+}
+
+#steel-btn{
+  color: var(--steel-btn-color);
+  border-color: var(--steel-btn-color);
+}
+
+#fairy-btn{
+  color: var(--fairy-btn-color);
+  border-color: var(--fairy-btn-color);
+}
