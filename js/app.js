@@ -8,11 +8,10 @@ window.addEventListener('load', () => {
   handleLoadMoreBtnClick()
 });
 
-
-
 //TODO:create pokemon stat page 
 let handlePokemonCardClick = () =>{
   let cards = document.querySelectorAll("#pokemon-results-section");
+  let results = document.getElementById("main-container");
 
   cards.forEach(card =>{
     card.addEventListener("click",() => {
@@ -20,7 +19,6 @@ let handlePokemonCardClick = () =>{
       console.log(pokemonName.toLowerCase());
     });
   })
-  
 }
 
 //gets users requested pokemon
