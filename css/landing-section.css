@@ -48,14 +48,14 @@
 #background-container{
   position:absolute;
   height:50vh;
-  top:10%;
+  top:0;;
   z-index:-10;
 
 }
 
 #landing-img{
   width:100%;
-  opacity: 1;
+  opacity: 0.9;
 }
 
 /* search section */
@@ -157,7 +157,7 @@
     box-shadow: 0 0 5px #ffdc00, 0 0 2px #ffdc00, 0 0 5px #ffdc00, 0 0 200px #ffdc00;
     color:white;
     cursor: pointer;
-    padding-left:50px;
+    padding-left:30px;
     white-space: nowrap;
 
   }

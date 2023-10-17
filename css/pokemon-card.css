@@ -1,7 +1,7 @@
 /* pokemon cards */
 
 .pokemon-card-container{
-    height: 440px;
+    height: 450px;
     background-color: rgba(0, 0, 0, 0.1);
     flex-direction: column;
     backdrop-filter: blur(8px);
@@ -21,6 +21,8 @@
     width:60%;
     height:65%;
     max-width:80vw;
+ 
+    
 }
   
   
@@ -33,6 +35,11 @@
     height:65%;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
+    
+    /* background-image: url("/images/list_pokemon-bg.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat; */
     display:flex;
     align-items: center;
     justify-content: center;
@@ -40,6 +47,12 @@
     position:relative;
 }
   
+#top-bg{
+    position: absolute;
+    z-index: -1;
+    opacity: 0.3;
+    width:80%;
+}
   
 /* bottom section */
 .pkm-card-bottom-section{
@@ -60,13 +73,15 @@
 .pkm-number{
     margin:0px;
     font-size: 20px;
+    color:#b4ebff;
 }
   
 .pkm-name{
     margin-bottom: 0px;
     margin-top:5px;
-    font-size: 2.2vw!important;
+    font-size: 23px;
     font-weight: 200;
+    color:white;
 }
    
 .pkm-types{
@@ -78,7 +93,7 @@
 }
   
 .pkm-types button{
-    height:30px;
+    height:28px;
     font-size: 18px;
  }
   
@@ -87,12 +102,17 @@
 @media (max-width: 900px) {
   
     .pokemon-card-container{
-      /* height:300px;
-      max-width: 160px;; */
-      height:300px;
+        height:250px;
+        
+    }
+    
+    .pkm-number{
+        font-size: 10px;
     }
   
-  
+    .pkm-name{
+        font-size: 20px;
+    }
     .pkm-types{
       grid-template-columns:1fr 1fr;
       gap:10px;
