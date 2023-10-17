@@ -167,6 +167,9 @@
     max-width:28px;
     padding-left:12px;
   }
+
+
+  /* media queries */
   
   @media (max-width: 750px) {
     #background-container{
@@ -175,9 +178,6 @@
     }
     #title-cntainer{
       height:6.5vh;
-    }
-    #title{
- 
     }
     #title-img{
       width:100%;

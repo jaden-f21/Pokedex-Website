@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/icons/favIcon.png">
+    <script src="js/handlebars.min.js"></script>
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/nav-section.css">
-    <link rel="stylesheet" href="css/landing-section.css">
-    <link rel="stylesheet" href="css/advance-search-open-section.css">
-    <link rel="stylesheet" href="css/advance-search-close-section.css">
-    <link rel="stylesheet" href="css/pokemon-results-section.css">
-    <link rel="stylesheet" href="css/pokemon-card.css">
-    <link rel="stylesheet" href="css/pokemon-type-btns.css">
+    <link rel="stylesheet" href="css/homeSection/nav-section.css">
+    <link rel="stylesheet" href="css/homeSection/landing-section.css">
+    <link rel="stylesheet" href="css/advanceSearchSection/advance-search-close-section.css">
+    <link rel="stylesheet" href="css/advanceSearchSection/advance-search-open-section.css">
+    <link rel="stylesheet" href="css/pokemonCards/pokemon-card-type-btns.css">
+    <link rel="stylesheet" href="css/pokemonCards/pokemon-card.css">
+    <link rel="stylesheet" href="css/searchResultsSection/pokemon-results-section.css">
     <title>Pokedex</title>
 </head>
 <body>
@@ -56,6 +57,7 @@
                     </div>
                 </div>
             </div>
+
              <!-- advance search open section -->
             <section id="advance-search-open-section">
                 <button id="advance-search-open-container">
@@ -161,10 +163,8 @@
                     <button id="hide-search-btn">Hide Advance Search</button>
                 </div>
             </section>
-
         </section>
 
-       
         <!-- pokemon results section -->
         <div id = "pokemon-results-section">
         </div>
@@ -177,6 +177,10 @@
         </div>
       
     </div>
+
+    <script type="text/x-handlebars-template" id="pokemon-template">
+    <!-- The content of the Handlebars template will go here -->
+    </script>
 
 
     <script  type="module" src="/js/app.js"></script>
