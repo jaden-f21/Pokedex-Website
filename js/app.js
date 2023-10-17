@@ -94,7 +94,7 @@ async function fetchPokemon(pokemon,singlePokemon) {
     }
 
     const data = await response.json();
-    console.log(data)
+
     // creates pokemon card
     if(singlePokemon == true){
       resultsSection.innerHTML = createPokemonCard(data);
@@ -102,11 +102,9 @@ async function fetchPokemon(pokemon,singlePokemon) {
       resultsSection.innerHTML += createPokemonCard(data);
     }
 
-  
     //add pokemon type button styles
     setTypeBtnColor(data);
 
-  
     // listens for click event on card
     handlePokemonCardClick()
 
@@ -130,7 +128,6 @@ function setTypeBtnColor(){
   })
  
 }
-
 
 // loads pokemon 
 async function loadPokemon(){
