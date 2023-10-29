@@ -1,7 +1,7 @@
 /* pokemon cards */
 
 .pokemon-card-container{
-    height: 400px;
+    height: 350px;
     background-color: rgba(0, 0, 0, 0.1);
     flex-direction: column;
     backdrop-filter: blur(8px);
@@ -85,9 +85,13 @@
 }
    
 .pkm-types{
+    display:flex;
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    justify-content: center;
+    align-items: center;
+    grid-auto-flow: column;
     width:100%;
   
 }
@@ -97,14 +101,7 @@
     font-size: 15px;
  }
   
-  
- @media (max-width: 600px) {
-  
-    .pokemon-card-container{
-        height:200px;
-        
-    }
-}
+
 @media (max-width: 900px) {
   
     .pokemon-card-container{
@@ -121,12 +118,12 @@
     }
     .pkm-types{
       grid-template-columns:1fr 1fr;
-      gap:10px;
+      gap:5px;
     }
   
     .pkm-types button{
-      font-size: 12px;
-      height:20px;
+      font-size: 10px;
+      height:18px;
       width:100%;
       
     }
@@ -139,3 +136,10 @@
   
 
   
+ @media (max-width: 600px) {
+  
+    .pokemon-card-container{
+        height:200px;
+        
+    }
+}
