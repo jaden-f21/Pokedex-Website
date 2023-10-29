@@ -1,12 +1,14 @@
 nav{
     display:flex;
     align-items: center;
-    justify-content: space-between;
-    padding-left:20px;
-    padding-right:20px;
-    background-color: rgba(245, 253, 255);
+    justify-content: center;
+    width:50%;
+    margin:auto;
 }
 
+#nav-title{
+    width:100%;
+}
 
 #logo{
     max-width:120px;

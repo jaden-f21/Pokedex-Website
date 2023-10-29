@@ -5,45 +5,6 @@
 }
 
 
-
-/* title section */
-#title-container{
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height:10vh;
-  width:100%;
-  margin-top:20px;
-}
-
-#title-img{
-    text-align: center;
-    width:50%;
-    height:15vh;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* max-width:30vw; */
-    margin:auto;
-    margin-top:2px;
-    color: rgb(0, 0, 0);
-    padding-top:10px;
-    padding-bottom:10px;
-    border-radius: 10px;
-    font-size: 100%;
-    font-weight:400;
-    cursor: pointer;
-    z-index:-1;
-}
-
-#title{
-  position:absolute;
-  top:3.5vh;
-}
-
 /* background */
 #background-container{
   position:absolute;

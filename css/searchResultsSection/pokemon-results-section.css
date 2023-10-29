@@ -1,8 +1,8 @@
 #pokemon-results-section{
     width:100%;
     display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-gap: 21px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-template-rows: repeat(auto, 1fr);
     align-items: center;
     justify-content: space-between;
@@ -43,7 +43,8 @@
 
   @media (max-width: 900px) {
     #pokemon-results-section{
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      grid-gap: 15px;
     }
   
     #load-more-btn{
@@ -51,6 +52,11 @@
     }
   
     }
-  
+  @media(max-width:400px){
+    #pokemon-results-section{
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      grid-gap: 10px;
+    }
+  }
    
   
