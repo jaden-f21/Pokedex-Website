@@ -41,6 +41,7 @@
 
 #advance-search-title{
   cursor: pointer;
+  font-size:18px;
 }
 
 
@@ -79,6 +80,8 @@
     background: none;
     border:none;
     box-shadow: none;
+    margin-bottom:0px;
+    margin-top: 10px;;
   }
   #advance-search-title{
     display:none;
