@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/icons/favIcon.png">
+    <script src="js/handlebars.min.js"></script>
+    <link rel="stylesheet" href="css/pokemonStatsPage/card.css">
+    <link rel="stylesheet" href="css/initialPage/homeSection/nav-section.css">
+    <link rel="stylesheet" href="css/initialPage/homeSection/landing-section.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/pokemonStatsPage/slider.css">
+    <title>Pokedex</title>
+</head>
+<body>
+    <!-- nav-bar -->
+    <nav>
+        <img src="/images/pokdex-title.png" id="nav-title">
+    </nav>
+
+  
+    <!-- main -->
+    <div id="main-container">
+
+        <!-- slider -->
+        <div id = "pokedex-slider">
+            <div id="left-slider-bkg">
+                <img src="images/icons/arrow_left_btn.png" id="left-arrow">
+            </div>
+            <div id="slider-title">
+                <span id="slider-id">0021</span>
+                <p id="slider-name">Pikachu</p>
+            </div>
+            <div id="right-slider-bkg">
+                <img src="/images/icons/arrow_right_btn.png" id = "right-arrow">
+            </div>
+        </div>
+
+
+
+        <section id = "pokemon-container">
+              <!-- left section -->
+            <div id = "pokemon-card-left-section">
+                <div id="top-left-section">
+                    <div id="name">
+
+                    </div>
+                    <div id="about">
+
+                    </div>
+                    
+                </div>
+                <div id="bottom-left-section">
+                    <div id="about-pokemon">
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- middle -->
+
+            <div id="pokemon-bkg-container">
+                <img src="images/0f5fe38127f2284bd9d2ed531117440f-removebg-preview.png" id ="back">
+                <img src="images/pokemon_circle_bg.png" id = "circle">
+                <img src="images/pokemon_bg.png" id="rotate">
+            </div>
+           
+        
+            <!-- right section -->
+            <div id = "pokemon-card-right-section">
+                
+            </div>
+        </section>
+    </div>
+
+    <script type="text/x-handlebars-template" id="pokemon-template">
+    <!-- The content of the Handlebars template will go here -->
+    </script>
+
+
+    <script  type="module" src="/js/app.js"></script>
+    <script  type="module" src="js/advance-search-handler.js"></script>
+</body>
+</html>
+
+	

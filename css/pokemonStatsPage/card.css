@@ -1,0 +1,117 @@
+#pokemon-container{
+    width:100%;
+    height:60vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+
+/* middle section*/
+#pokemon-bkg-container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin:auto;
+  width:50%;
+}
+
+#circle{
+  z-index:-1;
+  position:absolute;
+  width:30%;
+}
+#back{
+  z-index:1;
+  width:60%;
+}
+#rotate{
+  z-index:-2;
+  position:absolute;
+  width:45%;
+  animation: rotate 3s linear infinite;
+
+}
+
+@keyframes rotate {
+  from {
+      transform: rotate(0deg); /* Starting rotation angle (0 degrees) */
+  }
+  to {
+      transform: rotate(360deg); /* Ending rotation angle (360 degrees) for a full rotation */
+  }
+}
+
+
+
+/* left section */
+#pokemon-card-left-section{
+  background-color:blueviolet;
+  width:40%;
+  display:flex;
+  flex-direction: column;
+  height:60vh;
+
+}
+
+
+#top-left-section{
+    background-color: aquamarine;
+
+}
+#bottom-left-section{
+    background-color:green;
+
+}
+
+/* right slider */
+#pokemon-card-right-section{
+  background-color:rgb(226, 43, 202);
+  width:40%;
+  display:flex;
+  flex-direction: column;
+  height:60vh;
+
+}
+
+
+
+  /* Add your mobile-specific styles here */
+@media (max-width: 600px) {
+    #pokemon-container {
+        display: flex;
+        flex-direction: column;
+        margin-top:50px;
+    }
+    #pokemon-bkg-container,
+    #circle{
+      width:70%;
+    }
+    #back{
+      width:70%;
+    }
+    #rotate{
+      width:90%;
+    }
+
+    #pokemon-bkg-container {
+        order: -1; /* Places the middle section on top */
+    }
+    #rotate{
+      animation: none;
+    }
+
+    /* left */
+    #pokemon-card-left-section{
+      width:100%;
+      margin-top:50px;
+    }
+
+    #pokemon-card-right-section{
+      width:100%;
+    }
+
+    /* right */
+}
