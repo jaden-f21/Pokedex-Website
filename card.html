@@ -36,23 +36,46 @@
             </div>
         </div>
 
-
-
         <section id = "pokemon-container">
               <!-- left section -->
             <div id = "pokemon-card-left-section">
+                <!-- top -->
                 <div id="top-left-section">
-                    <div id="name">
-
+                    <fieldset>
+                        <legend class="left-legend">About</legend>
+                    </fieldset>
+                    <div id="about-info-container">
+                        <div id="about-category">
+                            <p>Category: Mouse</p>
+                        </div>
+                        <div id="about-evolution">
+                            <p>Evolves to: Raichu</p>
+                        </div>
                     </div>
-                    <div id="about">
-
+                    <div id="pokemon-traits-container">
+                        <div id="about-types-container">
+                            <p>Type</p>
+                            <div id="about-types">
+                                <button class="type-btn">fire</button>
+                                <button class="type-btn">water</button>
+                            </div>
+                        </div>
+                        <div id="about-weakness-container">
+                            <p>Weaknesses</p>
+                            <div id="about-weakness">
+                                <button class="type-btn">ground</button>
+                                <button class="type-btn">dark</button>
+                                <button class="type-btn">fairy</button>
+                                <button class="type-btn">dragon</button>
+                            </div>
+                        </div>
                     </div>
-                    
                 </div>
+                <!-- bottom -->
                 <div id="bottom-left-section">
                     <div id="about-pokemon">
-
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                     </div>
                 </div>
             </div>
@@ -77,9 +100,6 @@
     <!-- The content of the Handlebars template will go here -->
     </script>
 
-
-    <script  type="module" src="/js/app.js"></script>
-    <script  type="module" src="js/advance-search-handler.js"></script>
 </body>
 </html>
 

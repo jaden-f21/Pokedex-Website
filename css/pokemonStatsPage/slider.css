@@ -5,7 +5,7 @@
     align-items: center;
     justify-content:space-between;
     margin:auto;
-    margin-top:20px;
+    margin:0px;
     width:100%;
     position:relative;
  
@@ -13,7 +13,7 @@
 
 /* left side of slider */
 #left-slider-bkg{
-    width:35%;
+    width:30%;
     background-image: url("/images/arrow_pc_left.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -37,7 +37,7 @@
 
 /* right side of slider */
 #right-slider-bkg{
-    width:35%;
+    width:30%;
     background-image: url("/images/arrow_pc_right.png");
     background-size: contain;
     background-position: right;
@@ -64,7 +64,7 @@
   flex-direction: column;
   align-items: center;
   margin:auto;
-  font-size: 35px;
+  font-size: 32px;
   font-weight:500;
 }
 
@@ -76,7 +76,7 @@
 }
 
 #slider-id{
-  font-size:30px;
+  font-size:25px;
   color: #b3eafe;
 }
 

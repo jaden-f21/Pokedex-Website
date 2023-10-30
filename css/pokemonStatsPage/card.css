@@ -4,11 +4,12 @@
     display:flex;
     align-items: center;
     justify-content: center;
+    margin-top:50px;
 
   }
 
 
-/* middle section*/
+/*---------------------------------------------- middle section--------------------------------------------------*/
 #pokemon-bkg-container{
   display:flex;
   flex-direction: column;
@@ -16,6 +17,7 @@
   justify-content: center;
   margin:auto;
   width:50%;
+  
 }
 
 #circle{
@@ -46,27 +48,127 @@
 
 
 
-/* left section */
+/* ----------------------------------------------left section ---------------------------------------------------*/
 #pokemon-card-left-section{
-  background-color:blueviolet;
+
   width:40%;
   display:flex;
   flex-direction: column;
-  height:60vh;
+  margin:20px;
+  position:relative;
 
 }
 
+/* ------------top left section ------------------*/
 
-#top-left-section{
-    background-color: aquamarine;
+
+fieldset{
+  border: 2px solid transparent; 
+  border-top-color: rgb(70, 211, 243); 
+  color:white;
+  background-color: transparent;
 
 }
+
+/*
+ pokemon traits section:
+
+ contains about container and weakness container
+
+*/
+
+#pokemon-traits-container{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height:40vh;
+
+}
+
+/* about container */
+#about-info-container{
+  display:flex;
+  justify-content: space-between;
+}
+
+#about-category,
+#about-evolution{
+  display:flex;
+  background-color: #00ffff;
+  justify-content: space-evenly;
+  align-items: center;
+  width:45%;
+  height:40px;
+  padding:none;
+  font-size:15px;
+  border:none;
+  border-radius:5px;
+  white-space: nowrap; 
+  
+}
+
+/* types/weakness container */
+#about-types-container,
+#about-weakness-container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#about-types-container p,
+#about-weakness-container p{
+  font-size:18px;
+  color:white;
+  padding:none;
+}
+
+#about-types{
+  display:flex;
+  width:100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#about-weakness{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
+  width:100%;
+  margin-bottom:20px;
+}
+
+.type-btn{
+  background-color: transparent;
+  border:none;
+  color:white;
+  border-radius: 50px;
+  width:100%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #91c6e9;
+  height:28px;
+  font-size:15px;
+  cursor:pointer;
+
+}
+
+#about-types .type-btn{
+  width:48%;
+}
+
+
+
+/* -----------------------bottom left section------------- */
+
 #bottom-left-section{
-    background-color:green;
-
+    color:white;
+    font-size:15px;
 }
 
-/* right slider */
+/* ------------------------------------------------------right section -----------------------------------------------*/
 #pokemon-card-right-section{
   background-color:rgb(226, 43, 202);
   width:40%;
@@ -79,11 +181,17 @@
 
 
   /* Add your mobile-specific styles here */
-@media (max-width: 600px) {
+  @media (max-width: 700px) {
     #pokemon-container {
         display: flex;
         flex-direction: column;
-        margin-top:50px;
+        margin-top:100px;
+        height:100vh;
+        width:90%;
+        margin:auto;
+    }
+    #pokemon-traits-container{
+      height:30vh;
     }
     #pokemon-bkg-container,
     #circle{
@@ -98,6 +206,8 @@
 
     #pokemon-bkg-container {
         order: -1; /* Places the middle section on top */
+        margin-bottom:100px;
+        margin-top:100px;
     }
     #rotate{
       animation: none;
@@ -109,9 +219,13 @@
       margin-top:50px;
     }
 
+    #about-category {
+
+    }
     #pokemon-card-right-section{
       width:100%;
     }
 
     /* right */
 }
+
