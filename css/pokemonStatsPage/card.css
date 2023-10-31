@@ -3,8 +3,9 @@
     height:60vh;
     display:flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     margin-top:50px;
+    margin-bottom:50px;
 
   }
 
@@ -25,9 +26,10 @@
   position:absolute;
   width:30%;
 }
-#back{
+#pokemon-img{
   z-index:1;
   width:90%;
+  cursor: pointer;
 }
 #rotate{
   z-index:-2;
@@ -57,10 +59,16 @@
   margin:20px;
   position:relative;
   margin:20px;
+  height:75vh;
 
 }
 
 /* ------------top left section ------------------*/
+#top-left-section{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 
 fieldset{
@@ -71,57 +79,65 @@ fieldset{
 
 }
 
-/*
- pokemon traits section:
+/* ------------------------top section of the left section----------------------------------- */
 
- contains about container and weakness container
+#pokemon-details-container{
+  display:flex;
+  justify-content: space-between;
+  width:100%;
+  height:25vh;
+}
 
-*/
+
+/*-------------- left section -------------*/
+#about-info-container{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width:45%;
+}
+
+#about-category,
+#about-evolution,
+#about-ability-container{
+  display:flex;
+  background-color: #00ffff;
+  justify-content: space-around;
+  align-items: center;
+  width:100%;
+  height:30px;
+  padding:none;
+  font-size:12px;
+  border:none;
+  border-radius:5px;
+  white-space: nowrap; 
+  margin-bottom:10px;
+  
+}
+
+/* -------------right section-------------------*/
 
 #pokemon-traits-container{
   display:flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  height:40vh;
-
-}
-
-/* about container */
-#about-info-container{
-  display:flex;
   justify-content: space-between;
-}
-
-#about-category,
-#about-evolution{
-  display:flex;
-  background-color: #00ffff;
-  justify-content: space-evenly;
-  align-items: center;
   width:45%;
-  height:40px;
-  padding:none;
-  font-size:15px;
-  border:none;
-  border-radius:5px;
-  white-space: nowrap; 
-  
 }
 
-/* types/weakness container */
-#about-types-container,
-#about-weakness-container{
+/* top */
+#about-types-container{
+  width:100%;
   display:flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-#about-types-container p,
-#about-weakness-container p{
+#about-types-container p{
   font-size:18px;
-  color:white;
+  color:#b3eafe;
   padding:none;
+  margin-top:0px;
 }
 
 #about-types{
@@ -131,7 +147,44 @@ fieldset{
   align-items: center;
 }
 
-#about-weakness{
+/* bottom */
+
+#pokemon-size-container{
+  width:100%;
+  display:flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+#weight-container,
+#height-container{
+  display: flex;
+  flex-direction: column;
+
+}
+
+#weight-title,
+#height-title{
+  font-size: 18px;
+  color:#b3eafe;
+}
+
+#weight,
+#height{
+  font-size: 15px;;
+  margin:0px;
+  color:white;
+}
+
+
+/* ---------------------------- middle section of the top left section ------------------------------ */
+#about-moves-container{
+  width:100%;
+  margin-top:10px;
+}
+
+
+#about-moves{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -139,6 +192,12 @@ fieldset{
   grid-row-gap: 20px;
   width:100%;
   margin-bottom:20px;
+}
+
+#about-moves-container p{
+  text-align: center;
+  color:#b3eafe;
+  font-size: 18px;;
 }
 
 .type-btn{
@@ -162,12 +221,14 @@ fieldset{
 
 
 
+
 /* -----------------------bottom left section------------- */
 
 #bottom-left-section{
     color:white;
     font-size:15px;
 }
+
 
 /* ------------------------------------------------------right section -----------------------------------------------*/
 #pokemon-card-right-section{
@@ -176,7 +237,6 @@ fieldset{
   justify-content: space-between;
   align-items: center;
   height:70vh;
-  margin:20px;
   margin-left:0px;
 }
 
@@ -194,9 +254,11 @@ fieldset{
 .pokemon-evolution{
   height:30%;
   width:100%;
-  background-color: rgb(84, 246, 243);
+  background-color: rgba(84, 200, 246, 0.3);
+  backdrop-filter: blur(8px);
   border:none;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 #arrows{
@@ -219,18 +281,17 @@ fieldset{
 }
 
 
-  /* Add your mobile-specific styles here */
   @media (max-width: 920px) {
     #pokemon-container {
         display: flex;
         flex-direction: column;
         margin-top:100px;
-        height:100vh;
+        height:120vh;
         width:90%;
         margin:auto;
     }
     #pokemon-traits-container{
-      height:30vh;
+      /* height:30vh; */
     }
     #pokemon-bkg-container,
     #circle{
@@ -258,7 +319,7 @@ fieldset{
       margin-top:10px;
     }
 
-    #about-category {
+    #top-left-section{
 
     }
     #pokemon-card-right-section{
@@ -268,13 +329,17 @@ fieldset{
 
     #evolution-chain-container{
       flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
       width:100%;
+      height:20vh;
     }
     .pokemon-evolution{
       height:100%;
       width:30%;
+      margin-bottom: 50px;;
     }
-    #arrows img{
+    #arrows{
       display:none;
     }
     /* right */

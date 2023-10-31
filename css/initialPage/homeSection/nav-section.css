@@ -19,3 +19,9 @@ nav{
     max-width:30px;
     cursor:pointer;
 }
+
+@media (max-width: 920px) {
+    #nav-title{
+        width:300px;
+    }
+}
