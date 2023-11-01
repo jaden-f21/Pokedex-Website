@@ -1,0 +1,57 @@
+/*---------------------------------------------- middle section--------------------------------------------------*/
+#pokemon-bkg-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+    width:40%;
+    
+  }
+  
+  #circle{
+    z-index:-1;
+    position:absolute;
+    width:30%;
+  }
+  #pokemon-img{
+    z-index:1;
+    width:90%;
+    cursor: pointer;
+  }
+  #rotate{
+    z-index:-2;
+    position:absolute;
+    width:45%;
+    animation: rotate 3s linear infinite;
+  
+  }
+  
+  @keyframes rotate {
+    from {
+        transform: rotate(0deg); /* Starting rotation angle (0 degrees) */
+    }
+    to {
+        transform: rotate(360deg); /* Ending rotation angle (360 degrees) for a full rotation */
+    }
+  }
+  
+
+  
+  @media (max-width: 920px) {
+    #pokemon-bkg-container,
+    #circle{
+      width:70%;
+    }
+
+    #rotate{
+      width:90%;
+    }
+
+    #pokemon-bkg-container {
+        order: -1; /* Places the middle section on top */
+        margin-bottom:100px;
+        margin-top:100px;
+    }
+}
+
