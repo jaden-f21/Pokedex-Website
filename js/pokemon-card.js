@@ -1,5 +1,7 @@
+let id = 0;
+
 window.addEventListener('load', () => {
-    let name = handlePokemonCardClick();
+    handlePokemonCardClick();
 
   });
 
@@ -7,20 +9,19 @@ window.addEventListener('load', () => {
 //  If such an element is found, it retrieves the text content of an element with the class "pkm-name"
   let handlePokemonCardClick = () => {
     const resultsSection = document.getElementById("pokemon-results-section");
-  
     resultsSection.addEventListener("click", (event) => {
       const card = event.target.closest(".pokemon-card-container");
-      if (card) {
-        const pokemonName = card.querySelector(".pkm-name").textContent;
-        console.log(pokemonName)
-        return pokemonName;
-      }
-    });
-  };
+      let pokemonName = card.querySelector(".pkm-name").textContent;
+      let data = fetchPokemonData(pokemonName);
+      console.log(data)
+      fetchTemplate(data)
+  });
+
+};
   
 
 async function fetchPokemonData(name){
-    let pokemonData = {};
+    let pokemonData = new Map();
 
     // requests pokemon data
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
@@ -30,31 +31,45 @@ async function fetchPokemonData(name){
     }
 
     const data = await response.json();
-    pokemonData[""]
+    pokemonData.set("name",name)
+    pokemonData.set("id",data.id)
+    id=data.id
+    pokemonData.set("category",fetchCategory(data.species.url));
+    return pokemonData
+   
+}
 
+async function fetchCategory(url){
+  const response = await fetch(url);
+  let categoryData = await response.json();
+  let category = categoryData.genera.find((genus)=> genus.language.name =="en").genus
+  return category.split(" ")[0]
+
+  
 }
 
 
 async function fetchTemplate(data){
-    let bodyElement = document.body
+    let mainContainer = document.body
 
     // Fetch the Handlebars template file
-    fetch('templates/pokemon-template.hbs')
-        .then((response) => response.text())
-        .then((templateSource) => {
+    const templateResponse = await fetch('pokemon-template.hbs');
 
-            // Compile the Handlebars template
-            const template = Handlebars.compile(templateSource);
+    if (!templateResponse.ok) {
+        throw new Error('Failed to load template');
+    }
 
-            // Render the template with the data
-            const renderedHtml = template(data);
+    const templateSource = await templateResponse.text()
 
-            // Insert the rendered HTML into the container
-            bodyElement.innerHTML = renderedHtml;
-        })
-        .catch((error) => {
-            console.error('Error loading the Handlebars template:', error);
-        });
+    // Compile the Handlebars template
+    const template = Handlebars.compile(templateSource);
+
+    // Render the template with the data
+    const renderedHtml = template(data);
+
+    // Insert the rendered HTML into the container
+    mainContainer.innerHTML = renderedHtml;
+
 }
 
 
