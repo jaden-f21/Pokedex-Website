@@ -1,0 +1,92 @@
+<!-- The content of the Handlebars template will go here -->
+<script type="text/x-handlebars-template" id="pokemon-template">
+    <div id="main-container">
+        <section id="pokemon-container">
+            <!-- left section -->
+            <div id="pokemon-card-left-section">
+                <!-- top -->
+                <div id="top-left-section">
+                    <fieldset>
+                        <legend class="left-legend">About</legend>
+                    </fieldset>
+                    <!-- top container -->
+                    <div id="pokemon-details-container">
+                        <!-- left section -->
+                        <div id="about-info-container">
+                            <div id="about-category">
+                                <p>Category: {{category}}</p>
+                            </div>
+                            <div id="about-evolution">
+                                <p>Evolves to: {{evolution}}</p>
+                            </div>
+                            <div id="about-ability-container">
+                                <p class="attribut-title">Ability: {{ability}}</p>
+                            </div>
+                        </div>
+                        <!-- right section -->
+                        <div id="pokemon-traits-container">
+                            <!-- top -->
+                            <div id="about-types-container">
+                                <p class="attribut-title">Type</p>
+                                {{#each types}}
+                                <div id="about-types">
+                                    <button class="type-btn">{{this}}</button>
+                                </div>
+                                {{/each}}
+                            </div>
+                            <!-- bottom -->
+                            <div id="pokemon-size-container">
+                                <div id="height-container">
+                                    <p id="height-title">height</p>
+                                    <p id="height">{{height}}</p>
+                                </div>
+                                <div id="weight-container">
+                                    <p id="weight-title">Weight</p>
+                                    <p id="weight">{{weight}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="about-moves-container">
+                        <p class="attribut-title">Moves</p>
+                        {{#each moves}}
+                        <div id="about-moves">
+                            <button class="type-btn">{{this}}</button>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <!-- bottom -->
+                <div id="bottom-left-section">
+                    <div id="about-pokemon">
+                        <p>{{description}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- middle section -->
+            <div id="pokemon-bkg-container">
+                <img src="{{imageSrc}}" id="pokemon-img">
+                <img src="images/pokemon_circle_bg.png" id="circle">
+                <img src="images/pokemon_bg.png" id="rotate">
+            </div>
+            <!-- right section -->
+            <div id="pokemon-card-right-section">
+                <div id="arrows">
+                    <img id="up-arrow" src="images/icons/expand-arrow.png">
+                    <img id="down-arrow" src="images/icons/expand-arrow.png">
+                </div>
+                <div id="evolution-chain-container">
+                    <div class="pokemon-evolution">
+                        <img src="{{evolutionData.0.imageSrc}}" id="evolve-01">
+                    </div>
+                    <div class="pokemon-evolution">
+                        <img src="{{evolutionData.1.imageSrc}}" id="evolve-02">
+                    </div>
+                    <div class="pokemon-evolution">
+                        <img src="{{evolutionData.2.imageSrc}}" id="evolve-03">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</script>

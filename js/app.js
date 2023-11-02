@@ -3,23 +3,11 @@ let offset = 0
 
 window.addEventListener('load', () => {
   loadPokemon()
-  handlePokemonCardClick();
   handleSearchInput()
   handleLoadMoreBtnClick()
 });
 
-//TODO:create pokemon stat page 
-let handlePokemonCardClick = () =>{
-  let cards = document.querySelectorAll("#pokemon-results-section");
-  let results = document.getElementById("main-container");
 
-  cards.forEach(card =>{
-    card.addEventListener("click",() => {
-      let pokemonName = card.querySelector(".pkm-name").textContent
-      console.log(pokemonName.toLowerCase());
-    });
-  })
-}
 
 //gets users requested pokemon
 function handleSearchInput() {
@@ -104,7 +92,7 @@ async function fetchPokemon(pokemon,singlePokemon) {
     setTypeBtnColor(data);
 
     // listens for click event on card
-    handlePokemonCardClick()
+    // handlePokemonCardClick()
 
 
   } catch (error) {
