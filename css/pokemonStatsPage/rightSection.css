@@ -1,17 +1,17 @@
 
 /* ------------------------------------------------------right section -----------------------------------------------*/
 #pokemon-card-right-section{
-    width:40%;
+    width:30%;
     display:flex;
     justify-content: space-between;
     align-items: center;
     height:100%;
-    margin-left:50px;
+    /* margin-left:50px; */
   }
   
   #evolution-chain-container{
     height:100%;
-    width:50%;
+    width:60%;
     margin: auto;
     display:flex;
     flex-direction: column;
@@ -29,15 +29,22 @@
     border-radius: 10px;
     cursor: pointer;
     display:flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
   
+  }
+
+  .pokemon-evolution p{
+    margin:0px;
+    font-size:16px;
+    color:white;
   }
   
   #evolve-01,
   #evolve-02,
   #evolve-03{
-    width:60%;
+    width:75%;
   }
   #arrows{
     display:flex;

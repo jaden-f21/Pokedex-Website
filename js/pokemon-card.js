@@ -1,11 +1,10 @@
 window.addEventListener('load', () => {
-     let name = handlePokemonCardClick();
+    let name = handlePokemonCardClick();
 
   });
 
-// checks if the clicked element or its ancestors have the class "pokemon-card-container."
+// checks if the clicked element or its children have the class "pokemon-card-container."
 //  If such an element is found, it retrieves the text content of an element with the class "pkm-name"
-  
   let handlePokemonCardClick = () => {
     const resultsSection = document.getElementById("pokemon-results-section");
   
@@ -31,7 +30,7 @@ async function fetchPokemonData(name){
     }
 
     const data = await response.json();
-    
+    pokemonData[""]
 
 }
 
