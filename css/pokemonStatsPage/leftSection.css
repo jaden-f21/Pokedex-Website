@@ -83,6 +83,7 @@
     color:#b3eafe;
     padding:none;
     margin-top:0px;
+    margin-bottom:10px;
   }
   
   #about-types{
@@ -144,6 +145,7 @@
     text-align: center;
     color:#b3eafe;
     font-size: 18px;;
+    margin-bottom:10px;
   }
   
   .type-btn{
@@ -168,28 +170,54 @@
   
   
   
-  /* -----------------------bottom left section------------- */
+/* -----------------------bottom left section------------- */
   
-  #bottom-left-section{
-      color:white;
-      font-size:15px;
+#bottom-left-section{
+    color:white;
+    font-size:15px;
+    width:100%;
+    height:100%;
+
+}
+  
+#versions-container{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+#versions{
+  display:flex;
+  justify-content: space-evenly;
+  width:70%;
+}
+
+.version{
+  cursor:pointer;
+}
+
+#versions-title{
+  font-size:20px;
+}
+
+#about-pokemon{
+
+  height:100%;
+}
+
+@media (max-width: 920px) {
+  /* left */
+  #pokemon-card-left-section{
+    width:100%;
+    margin-top:10px;
+    /* margin-right:20px;; */
+    margin: auto;
   }
-  
-  
 
-
-  @media (max-width: 920px) {
-    /* left */
-    #pokemon-card-left-section{
-      width:100%;
-      margin-top:10px;
-      /* margin-right:20px;; */
-      margin: auto;
+  #pokemon-details-container{
+      height:inherit;
     }
-
-    #pokemon-details-container{
-        height:inherit;
-      }
 
 
 

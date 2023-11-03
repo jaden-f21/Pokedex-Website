@@ -93,6 +93,9 @@ async function getCategory(data){
   return category.split(" ")[0];
 }
 
+
+
+
 // async function getEvolveTo(data){
 //   let speciesUrl = data.species.url
 //   let speciesData = await fetch(speciesUrl)
