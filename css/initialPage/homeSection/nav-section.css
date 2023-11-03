@@ -5,6 +5,7 @@ nav{
     justify-content: center;
     width:100%;
     margin:auto;
+    cursor: pointer;
 }
 
 #nav-title{

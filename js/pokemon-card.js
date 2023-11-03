@@ -1,76 +1,124 @@
-let id = 0;
-
 window.addEventListener('load', () => {
-    handlePokemonCardClick();
+  handleCardClickEvents();
+});
 
+async function handleCardClickEvents() {
+  const resultsSection = document.getElementById('pokemon-results-section');
+
+  resultsSection.addEventListener('click', async (event) => {
+      const card = event.target.closest('.pokemon-card-container');
+      if (card) {
+          const pokemonName = card.querySelector('.pkm-name').textContent;
+          const pokemonData = await fetchPokemonData(pokemonName);
+          renderTemplate(pokemonData);
+      }
   });
-
-// checks if the clicked element or its children have the class "pokemon-card-container."
-//  If such an element is found, it retrieves the text content of an element with the class "pkm-name"
-  let handlePokemonCardClick = () => {
-    const resultsSection = document.getElementById("pokemon-results-section");
-    resultsSection.addEventListener("click", (event) => {
-      const card = event.target.closest(".pokemon-card-container");
-      let pokemonName = card.querySelector(".pkm-name").textContent;
-      let data = fetchPokemonData(pokemonName);
-      console.log(data)
-      fetchTemplate(data)
-  });
-
-};
-  
-
-async function fetchPokemonData(name){
-    let pokemonData = new Map();
-
-    // requests pokemon data
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-
-    if (!response.ok) {
-      throw new Error("pokemon does not exist");
-    }
-
-    const data = await response.json();
-    pokemonData.set("name",name)
-    pokemonData.set("id",data.id)
-    id=data.id
-    pokemonData.set("category",fetchCategory(data.species.url));
-    return pokemonData
-   
 }
 
-async function fetchCategory(url){
+async function fetchPokemonData(name) {
+  const pokemonData = new Map();
+
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+
+  if (!response.ok) {
+      throw new Error("Pokemon does not exist");
+  }
+
+  const data = await response.json();
+
+  let category = await getCategory(data)
+  let weaknesses = await getWeaknesses(data);
+  let types =  await getTypes(data);
+  let ability = getAbility(data);
+
+  pokemonData.set("name", name);
+  pokemonData.set("id", data.id.toString().padStart(4, '0'));
+  pokemonData.set('category', category);
+  pokemonData.set("height",data.height/100);
+  pokemonData.set("weight",data.weight/1000);
+  pokemonData.set("types",types);
+  pokemonData.set("ability",ability)
+  pokemonData.set("weaknesses",weaknesses);
+
+  return convertMapToObject(pokemonData);
+}
+
+async function fetchUrl(url) {
   const response = await fetch(url);
-  let categoryData = await response.json();
-  let category = categoryData.genera.find((genus)=> genus.language.name =="en").genus
-  return category.split(" ")[0]
-
-  
+  const urlData = await response.json();
+  return urlData;
 }
 
+let getTypes = async (data) => {
+  let types = [];
 
-async function fetchTemplate(data){
-    let mainContainer = document.body
+  data.types.forEach(element => {
+    types.push(element.type.name);
+  });
 
-    // Fetch the Handlebars template file
-    const templateResponse = await fetch('pokemon-template.hbs');
-
-    if (!templateResponse.ok) {
-        throw new Error('Failed to load template');
-    }
-
-    const templateSource = await templateResponse.text()
-
-    // Compile the Handlebars template
-    const template = Handlebars.compile(templateSource);
-
-    // Render the template with the data
-    const renderedHtml = template(data);
-
-    // Insert the rendered HTML into the container
-    mainContainer.innerHTML = renderedHtml;
-
+  return types;
 }
 
+async function getWeaknesses(data){
+  let weaknesses = [];
 
-    
+  let types = await getTypes(data)
+
+  // Use Promise.all to fetch data for all types concurrently
+  await Promise.all(types.map(async (type) => {
+    const response = await fetchUrl(`https://pokeapi.co/api/v2/type/${type}`);
+    const doubleDamageList = response.damage_relations.double_damage_from;
+
+    doubleDamageList.forEach((object) => {
+      weaknesses.push(object.name);
+    });
+  }));
+
+  if(weaknesses.length>5){
+    return weaknesses.slice(0,5);
+  }
+  return weaknesses;
+}
+
+let getAbility= (data)=>{
+  let abilitiesData= data.abilities.find((object) => object.is_hidden == false)
+  return abilitiesData.ability.name
+}
+
+async function getCategory(data){
+  let url = data.species.url;
+  const categoryData = await fetchUrl(url);
+  let category = categoryData.genera.find((genus) => genus.language.name === "en").genus;
+
+  return category.split(" ")[0];
+}
+
+// async function getEvolveTo(data){
+//   let speciesUrl = data.species.url
+//   let speciesData = await fetch(speciesUrl)
+
+//   let evolutionUrl = speciesData.evolution_chain.url
+//   let evolutionData = await fetch(evolutionUrl);
+
+//   // let evolvesTo = 
+// }
+
+async function renderTemplate(data) {
+  const mainContainer = document.body;
+
+  const templateResponse = await fetch('templates/pokemon-template.hbs');
+
+  if (!templateResponse.ok) {
+      throw new Error('Failed to load template');
+  }
+
+  const templateSource = await templateResponse.text();
+  const template = Handlebars.compile(templateSource);
+  const renderedHtml = template(data);
+
+  mainContainer.innerHTML = renderedHtml;
+}
+
+function convertMapToObject(map) {
+  return Object.fromEntries(map);
+}

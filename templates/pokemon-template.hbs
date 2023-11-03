@@ -34,7 +34,7 @@
                             <p>Category: {{category}}</p>
                         </div>
                         <div id="about-evolution">
-                            <p>Evolves to: {{evolution}}</p>
+                            <p>Evolves to: {{evolve-to}}</p>
                         </div>
                         <div id="about-ability-container">
                             <p class="attribut-title">Ability: {{ability}}</p>
@@ -45,32 +45,33 @@
                         <!-- top -->
                         <div id="about-types-container">
                             <p class="attribut-title">Type</p>
-                            {{#each types}}
                             <div id="about-types">
+                                {{#each types}}
                                 <button class="type-btn">{{this}}</button>
+                                {{/each}}
                             </div>
-                            {{/each}}
                         </div>
                         <!-- bottom -->
                         <div id="pokemon-size-container">
                             <div id="height-container">
                                 <p id="height-title">height</p>
-                                <p id="height">{{height}}</p>
+                                <p id="height">{{height}} m</p>
                             </div>
                             <div id="weight-container">
                                 <p id="weight-title">Weight</p>
-                                <p id="weight">{{weight}}</p>
+                                <p id="weight">{{weight}} kg</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="about-moves-container">
-                    <p class="attribut-title">Moves</p>
-                    {{#each moves}}
+                    <p class="attribut-title">Weaknesses</p>
+                
                     <div id="about-moves">
+                        {{#each weaknesses}}
                         <button class="type-btn">{{this}}</button>
+                        {{/each}}
                     </div>
-                    {{/each}}
                 </div>
             </div>
             <!-- bottom -->

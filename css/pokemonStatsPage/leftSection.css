@@ -30,7 +30,7 @@
     display:flex;
     justify-content: space-between;
     width:100%;
-    height:25vh;
+    height:22vh;
   }
   
   
@@ -39,7 +39,7 @@
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    width:45%;
+    width:35%;
   }
   
   #about-category,
@@ -66,7 +66,7 @@
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    width:45%;
+    width:60%;
   }
   
   /* top */
@@ -98,7 +98,7 @@
     width:100%;
     display:flex;
     align-items: center;
-    justify-content: space-between
+    justify-content: space-evenly
   }
   
   #weight-container,
@@ -111,12 +111,13 @@
   #weight-title,
   #height-title{
     font-size: 18px;
+    margin-bottom:8px;
     color:#b3eafe;
   }
   
   #weight,
   #height{
-    font-size: 15px;;
+    font-size: 16px;;
     margin:0px;
     color:white;
   }
