@@ -30,6 +30,8 @@ async function fetchPokemonData(name) {
   let weaknesses = await getWeaknesses(data);
   let types =  await getTypes(data);
   let ability = getAbility(data);
+  let version = await getVersion(data);
+  console.log(version)
 
   pokemonData.set("name", name);
   pokemonData.set("id", data.id.toString().padStart(4, '0'));
@@ -39,6 +41,7 @@ async function fetchPokemonData(name) {
   pokemonData.set("types",types);
   pokemonData.set("ability",ability)
   pokemonData.set("weaknesses",weaknesses);
+  pokemonData.set("version",version)
 
   return convertMapToObject(pokemonData);
 }
@@ -87,14 +90,30 @@ let getAbility= (data)=>{
 
 async function getCategory(data){
   let url = data.species.url;
-  const categoryData = await fetchUrl(url);
-  let category = categoryData.genera.find((genus) => genus.language.name === "en").genus;
+  const speciesData = await fetchUrl(url);
+  let category = speciesData.genera.find((genus) => genus.language.name === "en").genus;
 
   return category.split(" ")[0];
 }
 
 
+async function getVersion(data,color="blue"){
+    let url = data.species.url;
+    const speciesData = await fetchUrl(url);
+    let flavorTexts = speciesData.flavor_text_entries;
 
+    let text = ""
+
+    switch(color){
+      case "blue":
+        let obj = flavorTexts.find((obj)=> obj.version.name == "blue");
+        text = obj.flavor_text
+        break;
+    }
+
+    return text;
+
+}
 
 // async function getEvolveTo(data){
 //   let speciesUrl = data.species.url
