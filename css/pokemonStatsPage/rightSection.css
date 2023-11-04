@@ -15,13 +15,13 @@
     margin: auto;
     display:flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     position:relative;
     
   }
   
   .pokemon-evolution{
-    height:30%;
+    height:28%;
     width:100%;
     background-color: rgba(84, 200, 246, 0.3);
     backdrop-filter: blur(8px);

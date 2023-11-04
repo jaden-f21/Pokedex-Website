@@ -84,6 +84,7 @@ async function fetchPokemonData(name) {
   let ability = getAbility(data);
   let version = await getVersion(data);
   let image = data.sprites.other["official-artwork"].front_default;
+  let forms = await getPokemonForms(data)
 
   // Store Pokemon data in a map
   pokemonData.set("name", pokemonName);
@@ -95,7 +96,8 @@ async function fetchPokemonData(name) {
   pokemonData.set("ability",ability)
   pokemonData.set("weaknesses",weaknesses);
   pokemonData.set("version",version);
-  pokemonData.set("imageSrc",image)
+  pokemonData.set("currentPokemonImg",image);
+  pokemonData.set("forms",forms)
 
   return convertMapToObject(pokemonData);
 }
@@ -117,7 +119,6 @@ let getTypes = async (data) => {
 
   return types;
 }
-
 
 
 // Gets an array of weaknesses for the given Pokemon 
@@ -142,6 +143,40 @@ async function getWeaknesses(data){
   }
   return noDuplicateList;
 }
+
+
+async function getPokemonForms(data){
+  let forms = []
+  const speciesData = await fetchUrl(data.species.url);
+  const evolutions = await fetchUrl(speciesData.evolution_chain.url)
+
+  forms.push(evolutions.chain.species.name);
+
+  if(evolutions.chain.evolves_to.length > 0){
+    forms.push(evolutions.chain.evolves_to[0].species.name);
+
+    if(evolutions.chain.evolves_to[0].evolves_to.length > 0){
+      forms.push( evolutions.chain.evolves_to[0].evolves_to[0].species.name)
+    }
+  }
+
+  let formImages = await getPokemonFormImages(forms);
+
+  return formImages;
+}
+
+
+async function getPokemonFormImages(forms){
+  let formImages = []
+
+  for(let name of forms){
+    let pokemonData = await fetchResponseData(name);
+    formImages.push(pokemonData.sprites.other["official-artwork"].front_default)
+  }
+ 
+  return formImages;
+}
+
 
 // gets the ability for the given pokemon
 let getAbility= (data)=>{

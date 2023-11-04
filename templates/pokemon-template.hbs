@@ -7,10 +7,14 @@
             <img src="images/icons/arrow_left_btn.png" id="left-arrow">
         </div>
         <div id="slider-title">
-            <span id="slider-id">{{id}}</span>
+            <span id="slider-id">#{{id}}</span>
             <p id="slider-name">{{name}}</p>
         </div>
         <div id="right-slider-bkg">
+            <div id="next-pokemon-container">
+                <p>poekeomon</p>
+                <p>0093</p>
+            </div>
             <img src="/images/icons/arrow_right_btn.png" id = "right-arrow">
         </div>
     </div>
@@ -34,7 +38,7 @@
                             <p>Category: {{category}}</p>
                         </div>
                         <div id="about-evolution">
-                            <p>Evolves to: {{evolve-to}}</p>
+                            <p>Evolves from: {{evolve-to}}</p>
                         </div>
                         <div id="about-ability-container">
                             <p class="attribut-title">Ability: {{ability}}</p>
@@ -90,7 +94,7 @@
         </div>
         <!-- middle section -->
         <div id="pokemon-bkg-container">
-            <img src="{{imageSrc}}" id="pokemon-img">
+            <img src="{{currentPokemonImg}}" id="pokemon-img">
             <img src="images/pokemon_circle_bg.png" id="circle">
             <img src="images/pokemon_bg.png" id="rotate">
         </div>
@@ -101,15 +105,11 @@
                 <img id="down-arrow" src="images/icons/expand-arrow.png">
             </div>
             <div id="evolution-chain-container">
-                <div class="pokemon-evolution">
-                    <img src="{{evolutionData.0.imageSrc}}" id="evolve-01">
-                </div>
-                <div class="pokemon-evolution">
-                    <img src="{{evolutionData.1.imageSrc}}" id="evolve-02">
-                </div>
-                <div class="pokemon-evolution">
-                    <img src="{{evolutionData.2.imageSrc}}" id="evolve-03">
-                </div>
+                {{#each forms}}
+                    <div class="pokemon-evolution">
+                        <img src="{{this}}" id="evolve-01">
+                    </div>
+                {{/each}}
             </div>
         </div>
     </section>

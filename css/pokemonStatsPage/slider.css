@@ -68,6 +68,16 @@
   font-weight:500;
 }
 
+
+#next-pokemon-container{
+  color:white;
+  display:flex;
+  justify-content: space-evenly;
+  width:80%;
+  font-size:15px;
+  padding-bottom:20px;
+  padding-left:8px;
+}
 /* pokemon title */
 #slider-name{
   margin-top:2px;
