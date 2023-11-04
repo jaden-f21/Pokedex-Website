@@ -68,12 +68,12 @@ function createPokemonCard(pokemonData) {
 
 
 // fetches requested pokeomon
-async function fetchPokemon(pokemon,singlePokemon) {
+async function fetchPokemon(url,singlePokemon) {
   try {
     let resultsSection = document.getElementById("pokemon-results-section");
 
     // requests pokemon data
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+    const response = await fetch(`${url}`);
 
     if (!response.ok) {
       throw new Error("pokemon does not exist");
@@ -125,11 +125,10 @@ async function loadPokemon(){
     }
 
     const data = await response.json();
-
-    data.results.forEach(pokemon => {
-      // create pokemon card
-      fetchPokemon(pokemon.name,false)
-    })
+    
+    for(let pokemon of data.results){
+      await fetchPokemon(pokemon.url,false)
+    }
 
     offset += limit +1
   }catch(error){

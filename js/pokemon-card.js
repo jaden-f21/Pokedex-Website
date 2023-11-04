@@ -1,5 +1,6 @@
-window.addEventListener('load', () => {
-  handleCardClickEvents();
+let pokemonName = ""
+document.addEventListener('DOMContentLoaded', async() => {
+  await handleCardClickEvents()
 });
 
 async function handleCardClickEvents() {
@@ -8,9 +9,13 @@ async function handleCardClickEvents() {
   resultsSection.addEventListener('click', async (event) => {
       const card = event.target.closest('.pokemon-card-container');
       if (card) {
-          const pokemonName = card.querySelector('.pkm-name').textContent;
-          const pokemonData = await fetchPokemonData(pokemonName);
-          renderTemplate(pokemonData);
+          const name = card.querySelector('.pkm-name').textContent;
+          pokemonName = name;
+          const pokemonData = await fetchPokemonData(name);
+          await renderTemplate(pokemonData); 
+          
+          handleVersionClick()
+          
       }
   });
 }
@@ -18,13 +23,7 @@ async function handleCardClickEvents() {
 async function fetchPokemonData(name) {
   const pokemonData = new Map();
 
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-
-  if (!response.ok) {
-      throw new Error("Pokemon does not exist");
-  }
-
-  const data = await response.json();
+  let data = await fetchResponseData(name)
 
   let category = await getCategory(data)
   let weaknesses = await getWeaknesses(data);
@@ -102,18 +101,58 @@ async function getVersion(data,color="blue"){
     const speciesData = await fetchUrl(url);
     let flavorTexts = speciesData.flavor_text_entries;
 
-    let text = ""
+    let obj;
 
     switch(color){
       case "blue":
-        let obj = flavorTexts.find((obj)=> obj.version.name == "blue");
-        text = obj.flavor_text
+        obj = flavorTexts.find((obj)=> obj.language.name == "en" && obj.version.name == "blue");
+        break;
+      case "emerald":
+        obj = flavorTexts.find((obj)=> obj.language.name == "en" && obj.version.name == "emerald");
+        break;
+      case "yellow":
+        obj = flavorTexts.find((obj)=> obj.language.name == "en" && obj.version.name == "yellow");
         break;
     }
 
-    return text;
-
+    if (obj) {
+      let text = obj.flavor_text;
+      return text;
+    } else {
+      // Handles the case when obj is not found
+      return "Flavor text not available for this version.";
+    }
 }
+
+
+async function handleVersionClick() {
+  const versionsContainer = document.getElementById("versions-container");
+  const versionElements = versionsContainer.querySelectorAll(".version");
+
+  versionElements.forEach(versionElement => {
+      versionElement.addEventListener("click", async () => {
+          const versionColor = versionElement.id.split("-")[0];
+          const data = await fetchResponseData(pokemonName)
+          const text = await getVersion(data, versionColor);
+          const versionSection = document.querySelector("#about-pokemon p");
+          versionSection.textContent = text;
+      });
+  });
+}
+
+
+
+async function fetchResponseData(name){
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+
+  if (!response.ok) {
+      throw new Error("Pokemon does not exist");
+  }
+
+  const data = await response.json();
+  return data
+}
+
 
 // async function getEvolveTo(data){
 //   let speciesUrl = data.species.url

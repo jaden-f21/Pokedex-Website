@@ -182,15 +182,17 @@
   
 #versions-container{
   display:flex;
-  justify-content: space-around;
+
   align-items: center;
+  height:25px;
+  margin-top:10px;
   
 }
 
 #versions{
   display:flex;
   justify-content: space-evenly;
-  width:70%;
+  width:50%;
 }
 
 .version{
