@@ -1,24 +1,23 @@
 /* ----------------------------------------------------------buttons -------------------------------------------------------*/
 :root {
-  --fire-btn-color: #ff6900; 
-  --normal-btn-color:  #dcdcdc;
-  --water-btn-color:  #14b9ff;
-  --grass-btn-color:  #b4f000;
-  --electric-btn-color:#ffe100;
-  --ice-btn-color:#14f5ff;
-  --fighting-btn-color: #dc6900;
-  --poison-btn-color:#d28cd2;
-  --ground-btn-color:#fac85a;;
-  --flying-btn-color:#78dcff;
-  --psychic-btn-color:#f08cdc;
-  --bug-btn-color:#46c846;
-  --rock-btn-color:#b48c64;
-  --ghost-btn-color:#a08cff;
-  --dragon-btn-color:#5078dc;
-  --dark-btn-color:#787878;
-  --steel-btn-color:#aac8f0;
-  --fairy-btn-color:#ffafdc;
-
+  --fire-btn-color: rgb(255, 69, 0);   /* Bright red */
+  --normal-btn-color: #8c8c8c;        /* Medium gray */
+  --water-btn-color: #00aaff;         /* Bright blue */
+  --grass-btn-color: #6fd000;         /* Bright green */
+  --electric-btn-color: #ffd700;      /* Bright yellow */
+  --ice-btn-color: #00ffff;           /* Cyan/blue */
+  --fighting-btn-color: #ff5e00;      /* Slightly darker orange */
+  --poison-btn-color: #993399;        /* Intense purple */
+  --ground-btn-color: #ffc90b;        /* Slightly darker yellow */
+  --flying-btn-color: #0099cc;        /* Bright blue */
+  --psychic-btn-color: #ff669c;       /* Slightly darker pink */
+  --bug-btn-color: #00cc00;           /* Bright green */
+  --rock-btn-color: #a0522d;          /* Sienna brown */
+  --ghost-btn-color: #800080;         /* Purple */
+  --dragon-btn-color: #330099;        /* Dark blue */
+  --dark-btn-color: #333333;          /* Dark gray */
+  --steel-btn-color: #b0c4de;         /* Light blue/gray */
+  --fairy-btn-color: #ff69b4;         /* Pink */
 }
 
 #normal-btn{

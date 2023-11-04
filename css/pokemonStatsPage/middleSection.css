@@ -8,6 +8,11 @@
     width:35%;
     
   }
+  #about-character-container{
+    display:flex;
+    flex-direction:column;
+
+  }
   
   #circle{
     z-index:-1;

@@ -89,7 +89,7 @@ async function fetchPokemon(pokemon,singlePokemon) {
     }
 
     //add pokemon type button styles
-    setTypeBtnColor(data);
+    setTypeBtnColor(true);
 
     // listens for click event on card
     // handlePokemonCardClick()
@@ -101,7 +101,7 @@ async function fetchPokemon(pokemon,singlePokemon) {
 }
 
 
-function setTypeBtnColor(){
+export function setTypeBtnColor(setBackground=false){
   let typeBtns = document.querySelectorAll(".type-btn");
 
   // Get the CSS variable value using getComputedStyle
@@ -111,6 +111,8 @@ function setTypeBtnColor(){
     const myColor = rootStyles.getPropertyValue(color);
     btn.style.backgroundColor = myColor;
     btn.style.borderColor = myColor;
+    btn.style.border = `0px solid ${myColor}`
+    btn.style.boxShadow =  `0 0 1px 1px ${myColor}`
   })
  
 }

@@ -1,6 +1,6 @@
 /* ----------------------------------------------left section ---------------------------------------------------*/
 #pokemon-card-left-section{
-    width:30%;
+    width:32%;
     display:flex;
     flex-direction: column;
     position:relative;
@@ -21,6 +21,9 @@
     border-top-color: rgb(70, 211, 243); 
     color:white;
     background-color: transparent;
+    padding:0px;
+    padding-left:20px;
+    padding-bottom:8px;
   
   }
   
@@ -30,7 +33,7 @@
     display:flex;
     justify-content: space-between;
     width:100%;
-    height:22vh;
+    height:24vh;
   }
   
   
@@ -38,7 +41,7 @@
   #about-info-container{
     display:flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width:35%;
   }
   
@@ -48,8 +51,10 @@
     display:flex;
     background-color: #00ffff;
     justify-content: space-around;
+    padding-left:5px;
+    padding-right:5px;
     align-items: center;
-    width:100%;
+    width:98%;
     height:30px;
     padding:none;
     font-size:12px;
@@ -59,14 +64,14 @@
     margin-bottom:10px;
     
   }
-  
+ 
   /* -------------right section-------------------*/
   
   #pokemon-traits-container{
     display:flex;
     flex-direction: column;
-    justify-content: space-between;
-    width:60%;
+    justify-content: space-evenly;
+    width:55%;
   }
   
   /* top */
@@ -110,7 +115,8 @@
   }
   
   #weight-title,
-  #height-title{
+  #height-title,
+  #character-title{
     font-size: 18px;
     margin-bottom:8px;
     color:#b3eafe;
@@ -146,18 +152,20 @@
     color:#b3eafe;
     font-size: 18px;;
     margin-bottom:10px;
+    /* margin-top:0px; */
   }
   
   .type-btn{
-    background-color: transparent;
     border:none;
     color:white;
     border-radius: 50px;
     width:100%;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #91c6e9;
-    height:28px;
+    /* border-style: solid;
+    border-width: 1px; */
+    /* border-color: #91c6e9; */
+    height:20px;
+    display:flex;
+    align-items: center;
     font-size:15px;
     cursor:pointer;
   
