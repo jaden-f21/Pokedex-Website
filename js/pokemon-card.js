@@ -30,7 +30,7 @@ async function fetchPokemonData(name) {
   let types =  await getTypes(data);
   let ability = getAbility(data);
   let version = await getVersion(data);
-  console.log(version)
+  let image = data.sprites.other["official-artwork"].front_default
 
   pokemonData.set("name", name);
   pokemonData.set("id", data.id.toString().padStart(4, '0'));
@@ -40,7 +40,8 @@ async function fetchPokemonData(name) {
   pokemonData.set("types",types);
   pokemonData.set("ability",ability)
   pokemonData.set("weaknesses",weaknesses);
-  pokemonData.set("version",version)
+  pokemonData.set("version",version);
+  pokemonData.set("imageSrc",image)
 
   return convertMapToObject(pokemonData);
 }

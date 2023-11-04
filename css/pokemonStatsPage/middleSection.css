@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     margin:auto;
-    width:40%;
+    width:35%;
     
   }
   
@@ -16,7 +16,7 @@
   }
   #pokemon-img{
     z-index:1;
-    width:90%;
+    width:85%;
     cursor: pointer;
   }
   #rotate{
@@ -46,6 +46,10 @@
 
     #rotate{
       width:90%;
+    }
+    
+    #pokemon-img{
+      width:95%;
     }
 
     #pokemon-bkg-container {

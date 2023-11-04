@@ -1,6 +1,6 @@
 /* ----------------------------------------------left section ---------------------------------------------------*/
 #pokemon-card-left-section{
-    width:35%;
+    width:30%;
     display:flex;
     flex-direction: column;
     position:relative;
