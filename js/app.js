@@ -132,7 +132,7 @@ async function loadPokemon(){
        await fetchPokemon(pokemon.name,false)
     }
 
-    offset += limit +1
+    offset += limit
   }catch(error){
     console.log(error)
   }

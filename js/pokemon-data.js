@@ -1,24 +1,68 @@
 import  {setTypeBtnColor} from "./app.js"
 let pokemonName = ""
-document.addEventListener('DOMContentLoaded', async() => {
-  await handleCardClickEvents()
+let pokemonId;
+ const resultsSection = document.getElementById('pokemon-results-section');
+
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+  handleCardClickEvents();
 });
 
-async function handleCardClickEvents() {
-  const resultsSection = document.getElementById('pokemon-results-section');
 
+// Handle card click events when a Pokemon card is clicked
+async function handleCardClickEvents() {
   resultsSection.addEventListener('click', async (event) => {
-      const card = event.target.closest('.pokemon-card-container');
-      if (card) {
-          const name = card.querySelector('.pkm-name').textContent;
-          pokemonName = name;
-          const pokemonData = await fetchPokemonData(name);
-          await renderTemplate(pokemonData); 
-          setTypeBtnColor()
-          handleVersionClick()
-          
-      }
+    const card = event.target.closest('.pokemon-card-container');
+    if (card) {
+      const name = card.querySelector('.pkm-name').textContent;
+      pokemonName = name;
+
+      const data = await fetchPokemonData(name);
+      await setUpCard(data)
+    } 
   });
+}
+
+//renders template with data and sets up event listeners and button colors and
+async function setUpCard(data){
+  await renderTemplate(data);
+  setTypeBtnColor();
+  handleVersionClick();
+  handleNextAndPreviousButtonClicks();  
+}
+
+
+// Handles the "next" button click event
+async function handleNextAndPreviousButtonClicks() {
+  const rightButton = document.getElementById('right-arrow');
+  const leftButton = document.getElementById('left-arrow');
+
+  rightButton.removeEventListener('click', handleNextAndPreviousButtonClicks); // Remove the event listener temporarily
+
+  if(pokemonId == 1){
+    let leftSide = document.getElementById("left-slider-bkg")
+    leftSide.innerHTML = "<div></div>"
+    leftSide.style.backgroundImage = "none"
+  }else{
+    leftButton.removeEventListener('click', handleNextAndPreviousButtonClicks);
+  }
+
+  
+  rightButton.addEventListener('click', async () => {
+    fetchNextOrPreviousPokemonData(1);
+  });
+
+  leftButton.addEventListener("click", async() => {
+    fetchNextOrPreviousPokemonData(-1);
+  })
+}
+
+//gets data for the next Pokemon and updates the current display
+async function fetchNextOrPreviousPokemonData(int) {
+  let newPokemonId = pokemonId + int;
+  let newPokemonData = await fetchPokemonData(newPokemonId);
+  await setUpCard(newPokemonData) // Reattach the "next" button event to prevent multiple clicks
 }
 
 // Fetches detailed data for a given Pokemon and format it
@@ -26,7 +70,12 @@ async function fetchPokemonData(name) {
   const pokemonData = new Map();
 
   // Fetch basic data for the Pokemon
-  let data = await fetchResponseData(name)
+  let data = await fetchResponseData(name);
+
+  // get and set id
+  pokemonId = data.id;
+  pokemonName = data.name
+
 
   // Extract additional information
   let category = await getCategory(data)
@@ -37,7 +86,7 @@ async function fetchPokemonData(name) {
   let image = data.sprites.other["official-artwork"].front_default;
 
   // Store Pokemon data in a map
-  pokemonData.set("name", name);
+  pokemonData.set("name", pokemonName);
   pokemonData.set("id", data.id.toString().padStart(4, '0'));
   pokemonData.set('category', category);
   pokemonData.set("height",data.height/100);
@@ -69,15 +118,6 @@ let getTypes = async (data) => {
   return types;
 }
 
-
-async function handleNextButtonClick(){
-
-}
-
-
-async function handlePreviousButtonClick(){
-
-}
 
 
 // Gets an array of weaknesses for the given Pokemon 
