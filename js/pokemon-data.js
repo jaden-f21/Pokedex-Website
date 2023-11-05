@@ -1,7 +1,6 @@
 
 import * as app from './app.js'
 
-let isNavClicked = false;
 let pokemonName = ""
 let pokemonId;
 const resultsSection = document.getElementById('pokemon-results-section');
@@ -32,20 +31,9 @@ async function setUpCard(data){
   handleVersionClick();
   handleNextAndPreviousButtonClicks();
   handleEvolutionChainClicks() 
-  handleNavClick()
 }
 
 
-async function handleNavClick(){
-  let title = document.getElementById("nav-title");
-
-  title.addEventListener("click",async()=> {
-    isNavClicked = true;
-    await renderTemplate();
-    app.initializeApp()
-    
-  })
-}
 
 // Handles the "next" button click event
 async function handleNextAndPreviousButtonClicks() {
@@ -299,11 +287,10 @@ function convertMapToObject(map) {
   return Object.fromEntries(map);
 }
 
-async function renderTemplate(data="") {
+async function renderTemplate(data) {
   const mainContainer = document.body;
 
-  // Define the template path based on the condition
-  const templatePath = isNavClicked ? 'templates/home-template.hbs' : 'templates/pokemon-template.hbs';
+  const templatePath = 'templates/pokemon-template.hbs';
 
   // Load and render the template
   const templateResponse = await fetch(templatePath);
@@ -313,7 +300,7 @@ async function renderTemplate(data="") {
 
   const templateSource = await templateResponse.text();
   const template = Handlebars.compile(templateSource);
-  const renderedHtml = data ? template(data) : template();
+  const renderedHtml = template(data)
 
   mainContainer.innerHTML = renderedHtml;
 }

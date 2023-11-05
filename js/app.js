@@ -13,9 +13,6 @@ export function initializeApp() {
 
 }
 
-// Attach the 'load' event listener to call your initialization function
-window.addEventListener('load', initializeApp);
-
 //gets users requested pokemon
 function handleSearchInput() {
   const form = document.getElementById("search-bar");
