@@ -10,6 +10,7 @@ nav{
 
 #nav-title{
     width:400px;
+    cursor: pointer;
 }
 
 #logo{

@@ -78,6 +78,19 @@
   padding-bottom:20px;
   padding-left:8px;
 }
+
+
+#previous-pokemon-container{
+  color:white;
+  display:flex;
+  justify-content: space-evenly;
+  width:75%;
+  font-size:15px;
+  padding-bottom:20px;
+  padding-left:8px;
+}
+
+/*
 /* pokemon title */
 #slider-name{
   margin-top:2px;
@@ -104,5 +117,9 @@
 
   #slider-name{
     margin-bottom:0;
+  }
+  #next-pokemon-container,
+  #previous-pokemon-container{
+    display:none;
   }
 }

@@ -4,7 +4,11 @@
     <!-- slider -->
     <div id = "pokedex-slider">
         <div id="left-slider-bkg">
-            <img src="images/icons/arrow_left_btn.png" id="left-arrow">
+             <img src="images/icons/arrow_left_btn.png" id="left-arrow">
+             <div id="previous-pokemon-container">
+                {{!-- <p>{{previousPokemon.id}}</p> --}}
+                <p>{{previousPokemon.name}}</p>
+            </div>
         </div>
         <div id="slider-title">
             <span id="slider-id">#{{id}}</span>
@@ -12,8 +16,8 @@
         </div>
         <div id="right-slider-bkg">
             <div id="next-pokemon-container">
-                <p>poekeomon</p>
-                <p>0093</p>
+                <p>{{nextPokemon.name}}</p>
+                {{!-- <p>{{nextPokemon.id}}</p> --}}
             </div>
             <img src="/images/icons/arrow_right_btn.png" id = "right-arrow">
         </div>
@@ -100,14 +104,22 @@
         </div>
         <!-- right section -->
         <div id="pokemon-card-right-section">
-            <div id="arrows">
+            {{!-- <div id="arrows">
                 <img id="up-arrow" src="images/icons/expand-arrow.png">
                 <img id="down-arrow" src="images/icons/expand-arrow.png">
-            </div>
+            </div> --}}
+            {{!-- <h1 id="evolution-title">EVOLUTION</h1> --}}
+            <fieldset id="evolution-fieldset">
+                <legend class="left-legend">Evolution</legend>
+            </fieldset>
             <div id="evolution-chain-container">
                 {{#each forms}}
                     <div class="pokemon-evolution">
-                        <img src="{{this}}" id="evolve-01">
+                        <img src="{{image}}" id="evolve-01">
+                        <div id="evolution-details">
+                            <p id="evolution-id">{{id}}</p>
+                            <p id = "evolution-name">{{name}}</p>
+                        </div>
                     </div>
                 {{/each}}
             </div>

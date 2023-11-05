@@ -1,13 +1,20 @@
 const limit = 16;
 let offset = 0
 
-window.addEventListener('load', () => {
-  loadPokemon()
-  handleSearchInput()
-  handleLoadMoreBtnClick()
-});
+window.addEventListener("load",()=> {
+  initializeApp()
+})
 
+export function initializeApp() {
+  // Your initialization code, including event listeners
+  loadPokemon();
+  handleSearchInput();
+  handleLoadMoreBtnClick();
 
+}
+
+// Attach the 'load' event listener to call your initialization function
+window.addEventListener('load', initializeApp);
 
 //gets users requested pokemon
 function handleSearchInput() {

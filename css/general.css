@@ -5,6 +5,7 @@ html{
     background-attachment: fixed;
     z-index:-100;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
 

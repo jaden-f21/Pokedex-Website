@@ -1,9 +1,10 @@
-import  {setTypeBtnColor} from "./app.js"
+
+import * as app from './app.js'
+
+let isNavClicked = false;
 let pokemonName = ""
 let pokemonId;
- const resultsSection = document.getElementById('pokemon-results-section');
-
-
+const resultsSection = document.getElementById('pokemon-results-section');
 
 document.addEventListener('DOMContentLoaded', async () => {
   handleCardClickEvents();
@@ -27,11 +28,24 @@ async function handleCardClickEvents() {
 //renders template with data and sets up event listeners and button colors and
 async function setUpCard(data){
   await renderTemplate(data);
-  setTypeBtnColor();
+  app.setTypeBtnColor();
   handleVersionClick();
-  handleNextAndPreviousButtonClicks();  
+  handleNextAndPreviousButtonClicks();
+  handleEvolutionChainClicks() 
+  handleNavClick()
 }
 
+
+async function handleNavClick(){
+  let title = document.getElementById("nav-title");
+
+  title.addEventListener("click",async()=> {
+    isNavClicked = true;
+    await renderTemplate();
+    app.initializeApp()
+    
+  })
+}
 
 // Handles the "next" button click event
 async function handleNextAndPreviousButtonClicks() {
@@ -58,7 +72,27 @@ async function handleNextAndPreviousButtonClicks() {
   })
 }
 
-//gets data for the next Pokemon and updates the current display
+
+// handles clicks within the "evolution-chain-container."
+// When a "pokemon-evolution" element is clicked, it retrieves the new Pokémon's ID,
+// fetches data for that Pokémon, and sets up the card display for the new Pokémon.
+async function handleEvolutionChainClicks() {
+  let evolutionContainer = document.getElementById("evolution-chain-container");
+
+  evolutionContainer.addEventListener("click", async (event) => {
+    let cardContainer = event.target.closest(".pokemon-evolution");
+
+    if (cardContainer) {
+      let newPokemonId = cardContainer.querySelector("#evolution-name").textContent;
+      let newPokemonData = await fetchPokemonData(newPokemonId);
+      await setUpCard(newPokemonData);
+    }
+  });
+}
+
+
+
+//gets data of the next or previous Pokemon and sets up the card display for the new Pokémon.
 async function fetchNextOrPreviousPokemonData(int) {
   let newPokemonId = pokemonId + int;
   let newPokemonData = await fetchPokemonData(newPokemonId);
@@ -84,7 +118,9 @@ async function fetchPokemonData(name) {
   let ability = getAbility(data);
   let version = await getVersion(data);
   let image = data.sprites.other["official-artwork"].front_default;
-  let forms = await getPokemonForms(data)
+  let forms = await getPokemonForms(data);
+  let nextPokemon = await fetchResponseData(pokemonId+1);
+  let previousPokemon = await fetchResponseData(pokemonId-1)
 
   // Store Pokemon data in a map
   pokemonData.set("name", pokemonName);
@@ -97,10 +133,12 @@ async function fetchPokemonData(name) {
   pokemonData.set("weaknesses",weaknesses);
   pokemonData.set("version",version);
   pokemonData.set("currentPokemonImg",image);
-  pokemonData.set("forms",forms)
-
+  pokemonData.set("forms",forms);
+  pokemonData.set("nextPokemon",nextPokemon);
+  pokemonData.set("previousPokemon",previousPokemon);
   return convertMapToObject(pokemonData);
 }
+
 
 // Fetch data from a given URL and return it as JSON
 async function fetchUrl(url) {
@@ -160,22 +198,26 @@ async function getPokemonForms(data){
     }
   }
 
-  let formImages = await getPokemonFormImages(forms);
+  let formImages = await getPokemonFormData(forms);
 
   return formImages;
 }
 
+async function getPokemonFormData(forms) {
+  let formDataArray = [];
 
-async function getPokemonFormImages(forms){
-  let formImages = []
-
-  for(let name of forms){
+  for (let name of forms) {
     let pokemonData = await fetchResponseData(name);
-    formImages.push(pokemonData.sprites.other["official-artwork"].front_default)
+    formDataArray.push({
+      image: pokemonData.sprites.other["official-artwork"].front_default,
+      id: pokemonData.id.toString().padStart(4, '0'),
+      name: pokemonData.name,
+    });
   }
- 
-  return formImages;
+
+  return formDataArray;
 }
+
 
 
 // gets the ability for the given pokemon
@@ -253,22 +295,26 @@ async function fetchResponseData(name){
 }
 
 
-async function renderTemplate(data) {
+function convertMapToObject(map) {
+  return Object.fromEntries(map);
+}
+
+async function renderTemplate(data="") {
   const mainContainer = document.body;
 
-  const templateResponse = await fetch('templates/pokemon-template.hbs');
+  // Define the template path based on the condition
+  const templatePath = isNavClicked ? 'templates/home-template.hbs' : 'templates/pokemon-template.hbs';
 
+  // Load and render the template
+  const templateResponse = await fetch(templatePath);
   if (!templateResponse.ok) {
-      throw new Error('Failed to load template');
+    throw new Error('Failed to load template');
   }
 
   const templateSource = await templateResponse.text();
   const template = Handlebars.compile(templateSource);
-  const renderedHtml = template(data);
+  const renderedHtml = data ? template(data) : template();
 
   mainContainer.innerHTML = renderedHtml;
 }
 
-function convertMapToObject(map) {
-  return Object.fromEntries(map);
-}

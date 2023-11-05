@@ -21,12 +21,15 @@
     border-top-color: rgb(70, 211, 243); 
     color:white;
     background-color: transparent;
-    padding:0px;
-    padding-left:20px;
+    text-align: center;
+    width:90%;
     padding-bottom:8px;
+    
+    
   
   }
-  
+
+
   /* ------------------------top section of the left section----------------------------------- */
   
   #pokemon-details-container{
