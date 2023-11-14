@@ -5,6 +5,7 @@ html{
     background-attachment: fixed;
     z-index:-100;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
 
@@ -18,7 +19,7 @@ h1{
 }
 
 #main-container{
-    max-width:90%;
+    max-width:94%;
     margin:auto;
     z-index:100;
 }

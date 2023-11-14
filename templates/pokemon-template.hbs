@@ -1,0 +1,128 @@
+<!-- nav-bar -->
+<nav>
+    <a href="index.html"><img src="/images/pokdex-title.png" id="nav-title"></a>
+    <!-- slider -->
+    <div id = "pokedex-slider">
+        <div id="left-slider-bkg">
+             <img src="images/icons/arrow_left_btn.png" id="left-arrow">
+             <div id="previous-pokemon-container">
+                {{!-- <p>{{previousPokemon.id}}</p> --}}
+                <p>{{previousPokemon.name}}</p>
+            </div>
+        </div>
+        <div id="slider-title">
+            <span id="slider-id">#{{id}}</span>
+            <p id="slider-name">{{name}}</p>
+        </div>
+        <div id="right-slider-bkg">
+            <div id="next-pokemon-container">
+                <p>{{nextPokemon.name}}</p>
+                {{!-- <p>{{nextPokemon.id}}</p> --}}
+            </div>
+            <img src="/images/icons/arrow_right_btn.png" id = "right-arrow">
+        </div>
+    </div>
+</nav> 
+
+
+<div id="main-container">
+    <section id="pokemon-container">
+        <!-- left section -->
+        <div id="pokemon-card-left-section">
+            <!-- top -->
+            <div id="top-left-section">
+                <fieldset>
+                    <legend class="left-legend">About</legend>
+                </fieldset>
+                <!-- top container -->
+                <div id="pokemon-details-container">
+                    <!-- left section -->
+                    <div id="about-info-container">
+                        <div id="about-category">
+                            <p>Category: {{category}}</p>
+                        </div>
+                        <div id="about-evolution">
+                            <p>Evolves from: {{evolve-to}}</p>
+                        </div>
+                        <div id="about-ability-container">
+                            <p class="attribut-title">Ability: {{ability}}</p>
+                        </div>
+                    </div>
+                    <!-- right section -->
+                    <div id="pokemon-traits-container">
+                        <!-- top -->
+                        <div id="about-types-container">
+                            <p class="attribut-title">Type</p>
+                            <div id="about-types">
+                                {{#each types}}
+                                <button class="type-btn">{{this}}</button>
+                                {{/each}}
+                            </div>
+                        </div>
+                        <!-- bottom -->
+                        <div id="pokemon-size-container">
+                            <div id="height-container">
+                                <p id="height-title">height</p>
+                                <p id="height">{{height}} m</p>
+                            </div>
+                            <div id="weight-container">
+                                <p id="weight-title">Weight</p>
+                                <p id="weight">{{weight}} kg</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="about-moves-container">
+                    <p class="attribut-title">Weaknesses</p>
+                    <div id="about-moves">
+                        {{#each weaknesses}}
+                        <button class="type-btn">{{this}}</button>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <!-- bottom -->
+            <div id="bottom-left-section">
+                <div id="versions-container">
+                    <p id="versions-title">Versions</p>
+                    <div id="versions">
+                        <img src="/images/icons/bluePokeball.png" id="blue-v" class="version">
+                        <img src="/images/icons/greenPokeball.png" id="emerald-v" class="version">
+                        <img src="/images/icons/yellowPokeball.png" id ="yellow-v" class="version">
+                    </div>
+                </div>
+                <div id="about-pokemon">
+                    <p>{{version}}</p>
+                </div>
+            </div>
+        </div>
+        <!-- middle section -->
+        <div id="pokemon-bkg-container">
+            <img src="{{currentPokemonImg}}" id="pokemon-img">
+            <img src="images/pokemon_circle_bg.png" id="circle">
+            <img src="images/pokemon_bg.png" id="rotate">
+        </div>
+        <!-- right section -->
+        <div id="pokemon-card-right-section">
+            {{!-- <div id="arrows">
+                <img id="up-arrow" src="images/icons/expand-arrow.png">
+                <img id="down-arrow" src="images/icons/expand-arrow.png">
+            </div> --}}
+            {{!-- <h1 id="evolution-title">EVOLUTION</h1> --}}
+            <fieldset id="evolution-fieldset">
+                <legend class="left-legend">Evolution</legend>
+            </fieldset>
+            <div id="evolution-chain-container">
+                {{#each forms}}
+                    <div class="pokemon-evolution">
+                        <img src="{{image}}" id="evolve-01">
+                        <div id="evolution-details">
+                            <p id="evolution-id">{{id}}</p>
+                            <p id = "evolution-name">{{name}}</p>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+</div>

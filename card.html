@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/icons/favIcon.png">
+    <script src="js/handlebars.min.js"></script>
+    <link rel="stylesheet" href="css/pokemonStatsPage/card.css">
+    <link rel="stylesheet" href="css/initialPage/homeSection/nav-section.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/pokemonStatsPage/slider.css">
+    <link rel="stylesheet" href="css/pokemonStatsPage/leftSection.css">
+    <link rel="stylesheet" href="css/pokemonStatsPage/middleSection.css">
+    <link rel="stylesheet" href="css/pokemonStatsPage/rightSection.css">
+    
+    <title>Pokedex</title>
+</head>
+<body>
+    <!-- nav-bar -->
+    <nav>
+        <img src="/images/pokdex-title.png" id="nav-title">
+    </nav>
+
+    <!-- main -->
+    <div id="main-container">
+          <!-- slider -->
+        <div id = "pokedex-slider">
+            <div id="left-slider-bkg">
+                <img src="images/icons/arrow_left_btn.png" id="left-arrow">
+            </div>
+            <div id="slider-title">
+                <span id="slider-id">0021</span>
+                <p id="slider-name">Pikachu</p>
+            </div>
+            <div id="right-slider-bkg">
+                <img src="/images/icons/arrow_right_btn.png" id = "right-arrow">
+            </div>
+        </div>
+        <section id = "pokemon-container">
+            <!-- left section -->
+            <div id = "pokemon-card-left-section">
+                <!-- top -->
+                <div id="top-left-section">
+                    <fieldset>
+                        <legend class="left-legend">About</legend>
+                    </fieldset>
+                    <!-- top container -->
+                    <div id="pokemon-details-container">
+                        <!-- left section -->
+                        <div id="about-info-container">
+                            <div id="about-category">
+                                <p>Category: Mouse</p>
+                            </div>
+                            <div id="about-evolution">
+                                <p>Evolves to: Raichu</p>
+                            </div>
+                            <div id="about-ability-container">
+                                <p class="attribut-title">Ability: Lighting</p>
+                            </div>
+                        </div>
+                        <!-- right section -->
+                        <div id="pokemon-traits-container">
+                            <!-- top -->
+                            <div id="about-types-container">
+                                <p class="attribut-title">Type</p>
+                                <div id="about-types">
+                                    <button class="type-btn">fire</button>
+                                    <button class="type-btn">water</button>
+                                </div>
+                            </div>
+                            <!-- bottom -->
+                            <div id="pokemon-size-container">
+                                <div id="height-container">
+                                    <p id="height-title">height</p>
+                                    <p id="height">20m</p>
+                                </div>
+                                <div id="weight-container">
+                                    <p id="weight-title">Weight</p>
+                                    <p id="weight">100kg</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                
+                    <div id="about-moves-container">
+                        <p class="attribut-title">Moves</p>
+                        <div id="about-moves">
+                            <button class="type-btn">ground</button>
+                            <button class="type-btn">dark</button>
+                            <button class="type-btn">fairy</button>
+                            <button class="type-btn">fairy</button>
+    
+                        </div>
+                    </div>
+                </div>
+                <!-- bottom -->
+                <div id="bottom-left-section">
+                    <div id="about-pokemon">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- middle section -->
+            <div id="pokemon-bkg-container">
+                <img src="images/landing-background.png" id ="pokemon-img">
+                <img src="images/pokemon_circle_bg.png" id = "circle">
+                <img src="images/pokemon_bg.png" id="rotate">
+            </div>
+        
+            <!-- right section -->
+            <div id = "pokemon-card-right-section">
+                <div id="arrows">
+                    <img id ="up-arrow" src="images/icons/expand-arrow.png">
+                    <img id ="down-arrow" src="images/icons/expand-arrow.png">
+                </div>
+                <div id="evolution-chain-container">
+                    <div class="pokemon-evolution"><img src="images/landing-background.png" id="evolve-01"><p>pokemon</p></div>
+                    <div class="pokemon-evolution"><img src="images/landing-background.png" id="evolve-02"><p>pokemon</p></div>
+                    <div class="pokemon-evolution"><img src="images/landing-background.png" id="evolve-03"><p>pokemon</p></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script type="text/x-handlebars-template" id="pokemon-template">
+    <!-- The content of the Handlebars template will go here -->
+    </script>
+
+</body>
+</html>
+
+	

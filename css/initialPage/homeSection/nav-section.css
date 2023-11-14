@@ -1,13 +1,16 @@
 nav{
     display:flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width:50%;
+    width:100%;
     margin:auto;
+    cursor: pointer;
 }
 
 #nav-title{
-    width:80%;
+    width:400px;
+    cursor: pointer;
 }
 
 #logo{
@@ -18,4 +21,10 @@ nav{
 #ball-logo{
     max-width:30px;
     cursor:pointer;
+}
+
+@media (max-width: 920px) {
+    #nav-title{
+        width:300px;
+    }
 }

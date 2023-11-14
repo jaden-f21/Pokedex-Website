@@ -85,20 +85,21 @@
 }
    
 .pkm-types{
-    display:flex;
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
     grid-auto-flow: column;
     width:100%;
   
 }
   
 .pkm-types button{
-    height:25px;
+    /* height:20px; */
+    padding-bottom:2px;
+    padding-top:2px;
     font-size: 15px;
+    width:100%;
+    
  }
   
 
@@ -123,7 +124,7 @@
   
     .pkm-types button{
       font-size: 10px;
-      height:18px;
+      height:14px;
       width:100%;
       
     }

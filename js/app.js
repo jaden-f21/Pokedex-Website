@@ -1,24 +1,16 @@
 const limit = 16;
 let offset = 0
 
-window.addEventListener('load', () => {
-  loadPokemon()
-  handlePokemonCardClick();
-  handleSearchInput()
-  handleLoadMoreBtnClick()
-});
+window.addEventListener("load",()=> {
+  initializeApp()
+})
 
-//TODO:create pokemon stat page 
-let handlePokemonCardClick = () =>{
-  let cards = document.querySelectorAll("#pokemon-results-section");
-  let results = document.getElementById("main-container");
+export function initializeApp() {
+  // Your initialization code, including event listeners
+  loadPokemon();
+  handleSearchInput();
+  handleLoadMoreBtnClick();
 
-  cards.forEach(card =>{
-    card.addEventListener("click",() => {
-      let pokemonName = card.querySelector(".pkm-name").textContent
-      console.log(pokemonName.toLowerCase());
-    });
-  })
 }
 
 //gets users requested pokemon
@@ -101,10 +93,10 @@ async function fetchPokemon(pokemon,singlePokemon) {
     }
 
     //add pokemon type button styles
-    setTypeBtnColor(data);
+    setTypeBtnColor(true);
 
     // listens for click event on card
-    handlePokemonCardClick()
+    // handlePokemonCardClick()
 
 
   } catch (error) {
@@ -113,7 +105,7 @@ async function fetchPokemon(pokemon,singlePokemon) {
 }
 
 
-function setTypeBtnColor(){
+export function setTypeBtnColor(setBackground=false){
   let typeBtns = document.querySelectorAll(".type-btn");
 
   // Get the CSS variable value using getComputedStyle
@@ -123,6 +115,8 @@ function setTypeBtnColor(){
     const myColor = rootStyles.getPropertyValue(color);
     btn.style.backgroundColor = myColor;
     btn.style.borderColor = myColor;
+    btn.style.border = `0px solid ${myColor}`
+    btn.style.boxShadow =  `0 0 1px 1px ${myColor}`
   })
  
 }
@@ -137,13 +131,12 @@ async function loadPokemon(){
     }
 
     const data = await response.json();
+    
+    for(let pokemon of data.results){
+       await fetchPokemon(pokemon.name,false)
+    }
 
-    data.results.forEach(pokemon => {
-      // create pokemon card
-      fetchPokemon(pokemon.name,false)
-    })
-
-    offset += limit +1
+    offset += limit
   }catch(error){
     console.log(error)
   }
